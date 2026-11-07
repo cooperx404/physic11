@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1220">
+<title>فیزیک‌یار | ماشین‌حساب فیزیک یازدهم</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+:root{
+ --bg:#0a1020;--surface:#111b30;--surface2:#17243d;--surface3:#1c2c49;
+ --text:#edf3ff;--muted:#9aabc7;--line:#2b3c5b;--accent:#55dfc1;--accent2:#8aa8ff;
+ --danger:#ff8e9b;--good:#83e6b2;--shadow:0 24px 70px #0005;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 80% -10%,#233d66 0,transparent 36%),radial-gradient(ellipse at 0% 55%,#132c3c 0,transparent 35%),var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh}
+button,input{font:inherit}
+.shell{max-width:1220px;margin:auto;padding:28px 22px 50px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:32px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(145deg,#70f0d1,#3d9fd0);display:grid;place-items:center;color:#06251f;font-size:25px;font-weight:800;box-shadow:0 8px 28px #55dfc133}
+.brand-name{font-weight:800;font-size:18px}.brand-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.status{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;border:1px solid var(--line);background:#111b30aa;padding:9px 13px;border-radius:30px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 12px var(--good)}
+.hero{margin-bottom:26px;max-width:760px}
+.eyebrow{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.2px}
+h1{font-size:clamp(27px,4vw,42px);line-height:1.45;margin:8px 0 7px;letter-spacing:-1px}
+.hero p{color:var(--muted);margin:0;line-height:2;font-size:14px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.stat{border:1px solid var(--line);background:#101a2dba;border-radius:12px;padding:8px 12px;color:var(--muted);font-size:11px}
+.stat b{color:var(--text);font-size:13px;margin-left:5px}
+.workspace{display:grid;grid-template-columns:320px minmax(0,1fr);gap:18px;align-items:start}
+.card{background:linear-gradient(155deg,#17243cF2,#101a2dF2);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.nav-card{padding:17px;position:sticky;top:18px}
+.card-heading{display:flex;justify-content:space-between;align-items:center;margin:2px 3px 14px}
+.card-heading h2{font-size:14px;margin:0}
+.count{font-size:11px;color:var(--muted);background:var(--surface3);padding:4px 8px;border-radius:20px}
+.search{width:100%;background:#0b1426;border:1px solid var(--line);border-radius:11px;padding:10px 12px;color:var(--text);outline:none;font-size:12px;margin-bottom:12px}
+.search:focus,.field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px #55dfc11c}
+.nav-list{display:grid;gap:7px}
+.nav-item{width:100%;display:flex;align-items:center;gap:11px;text-align:right;background:transparent;border:1px solid transparent;color:var(--text);padding:10px;border-radius:13px;cursor:pointer;transition:.18s}
+.nav-item:hover{background:#ffffff08;border-color:#ffffff10}
+.nav-item.active{background:linear-gradient(100deg,#1c4a50aa,#233654aa);border-color:#55dfc155}
+.nav-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:#263956;color:var(--accent);font-weight:800;flex:none}
+.nav-item.active .nav-icon{background:#24534f;color:#8effdd}
+.nav-title{font-size:12px;font-weight:600}.nav-sub{display:block;color:var(--muted);font-size:10px;margin-top:3px;font-weight:400}
+.content{padding:24px;min-height:570px}
+.content-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:22px}
+.kicker{font-size:11px;color:var(--accent);font-weight:700}
+.content-head h2{font-size:22px;margin:5px 0 4px}
+.content-head p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}
+.badge{font-size:10px;color:#b7c8e5;border:1px solid var(--line);padding:6px 10px;border-radius:30px;white-space:nowrap}
+.formula{background:#0c1729;border:1px solid #2b4561;border-radius:14px;padding:13px 16px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.formula-label{font-size:10px;color:var(--muted);margin-bottom:4px}.formula-value{font-size:17px;font-weight:700;direction:ltr;text-align:left;color:#b8f5e5}
+.formula-note{font-size:10px;color:var(--muted);text-align:left}
+.fields-title{font-size:12px;font-weight:700;margin-bottom:12px}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:11px;color:#c2cee2}
+.unit{color:var(--muted);font-size:10px;margin-right:4px}
+.field input{width:100%;background:#0b1426;border:1px solid var(--line);border-radius:11px;padding:12px;color:var(--text);outline:none;direction:ltr;text-align:left;font-size:14px;transition:.18s}
+.field input::placeholder{color:#647590}
+.keypad{margin-top:16px;padding:14px;background:#0b1426;border:1px solid var(--line);border-radius:15px}
+.keypad-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:var(--muted);font-size:11px}
+.keypad-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.key-btn{min-height:43px;border:1px solid #344866;border-radius:9px;background:#1a2942;color:var(--text);font-size:15px;font-weight:700;cursor:pointer;touch-action:manipulation}
+.key-btn:active{transform:scale(.97);background:#28504f;border-color:var(--accent)}
+.key-btn.special{color:var(--accent);background:#18343a;border-color:#32605d}
+.key-btn.wide{font-size:12px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+.btn{border:0;border-radius:11px;padding:11px 18px;cursor:pointer;font-size:12px;font-weight:700;transition:.18s}
+.btn-primary{background:linear-gradient(110deg,#75f0d0,#51cbb8);color:#06251f;box-shadow:0 7px 20px #55dfc122}
+.btn-primary:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn-ghost{background:#263754;color:#dbe7fa;border:1px solid #3a4c6d}
+.btn-ghost:hover{background:#304362}
+.error{display:none;margin-top:15px;background:#3b202c;border:1px solid #794252;color:#ffb4bd;border-radius:11px;padding:11px 13px;font-size:11px}
+.result{display:none;margin-top:20px;border:1px solid #367b70;background:linear-gradient(130deg,#123a3c,#102b39);border-radius:16px;padding:17px;animation:rise .25s ease}
+.result.show{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.result-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.result-label{font-size:11px;color:#a9ddd3}
+.copy{background:#24534f;border:1px solid #3c8278;color:#cafff1;border-radius:8px;padding:6px 10px;font-size:10px;cursor:pointer}
+.result-number{font-size:clamp(22px,4vw,32px);font-weight:800;color:#e4fff7;direction:ltr;text-align:right;margin:10px 0 3px;overflow-wrap:anywhere}
+.result-number sup{font-size:.55em;vertical-align:super}
+.result-unit{font-size:12px;color:#a9ddd3;direction:ltr;text-align:right}
+.explain{font-size:10px;color:#9fb9b5;margin-top:10px;line-height:1.8}
+.info{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:10px;line-height:2}
+.info strong{color:#d4e0f4}
+.history{margin-top:18px;padding:17px}
+.history-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.history h3{font-size:13px;margin:0}.history-empty{font-size:11px;color:var(--muted);padding:5px 0}
+.history-list{display:grid;gap:8px}
+.history-row{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#0c1729;border:1px solid var(--line);padding:10px 12px;border-radius:10px;font-size:11px}
+.history-row span:last-child{direction:ltr;color:#b8f5e5;font-weight:600;text-align:left}
+.footer{display:flex;justify-content:space-between;gap:12px;margin-top:22px;color:#7385a3;font-size:10px}
+@media(max-width:850px){.workspace{grid-template-columns:1fr}.nav-card{position:static}.nav-list{grid-template-columns:repeat(2,minmax(0,1fr))}.content{min-height:0}}
+@media(max-width:540px){.shell{padding:17px 12px 35px}.topbar{margin-bottom:24px}.status{font-size:0;padding:10px}.status .dot{width:8px;height:8px}.nav-list{grid-template-columns:1fr 1fr}.nav-item{padding:8px;gap:8px}.nav-icon{width:31px;height:31px}.nav-title{font-size:10px}.content{padding:17px}.content-head h2{font-size:19px}.fields{grid-template-columns:1fr}.formula{align-items:flex-start;flex-direction:column}.formula-note{text-align:right}}
+
+/* حالت روشن */
+body.light{
+ --bg:#f2f6fc;--surface:#ffffff;--surface2:#eef3fa;--surface3:#e4ebf5;
+ --text:#17243a;--muted:#60718b;--line:#d5dfec;--accent:#087f70;--accent2:#4269c8;
+ --danger:#b4233b;--good:#16804b;--shadow:0 18px 48px #1b355015;
+ background:radial-gradient(ellipse at 80% -10%,#d9e8ff 0,transparent 38%),radial-gradient(ellipse at 0% 55%,#dff5ef 0,transparent 35%),var(--bg);
+ color:var(--text);
+}
+body.light .status{background:#ffffffcc}
+body.light .stat{background:#ffffffcc}
+body.light .card{background:linear-gradient(155deg,#ffffff,#f8fbff)}
+body.light .search,body.light .field input,body.light .keypad,body.light .history-row{background:#f5f8fc;color:var(--text)}
+body.light .field label{color:#40516b}
+body.light .field input::placeholder{color:#8493a8}
+body.light .key-btn{background:#e8eef7;color:#1b2b43;border-color:#c8d5e5}
+body.light .key-btn.special{color:#087f70;background:#e0f3ef;border-color:#a9d9d0}
+body.light .btn-ghost{background:#e8eef7;color:#263b58;border-color:#c8d5e5}
+body.light .btn-ghost:hover{background:#dce6f2}
+body.light .formula{background:#edf4fb;border-color:#cbd9e9}
+body.light .formula-value{color:#087f70}
+body.light .nav-icon{background:#e5edf7;color:#087f70}
+body.light .nav-item.active{background:linear-gradient(100deg,#dff4ef,#e8efff);border-color:#8bcfc1}
+body.light .nav-item.active .nav-icon{background:#c9eee5;color:#087f70}
+body.light .count{background:#e8eef7}
+body.light .result{background:linear-gradient(130deg,#e2f5ef,#e8f2fb);border-color:#9acfc2}
+body.light .result-label,body.light .result-unit,body.light .explain{color:#315f59}
+body.light .result-number{color:#173f39}
+body.light .copy{background:#d2eee7;border-color:#9acfc2;color:#14594e}
+body.light .info strong{color:#263b58}
+body.light .history-row span:last-child{color:#087f70}
+body.light .error{background:#fff0f2;border-color:#edb9c2;color:#a51f36}
+.theme-toggle{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:30px;padding:9px 13px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}
+.theme-toggle:hover{border-color:var(--accent)}
+.top-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:540px){.top-actions{gap:6px}.theme-toggle{padding:8px 10px;font-size:11px}}
+
+</style>
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#101a2b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="فیزیک‌یار">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+ <div class="brand"><div class="logo">∑</div><div><div class="brand-name">فیزیک‌یار</div><div class="brand-sub">ماشین‌حساب هوشمند فیزیک یازدهم</div></div></div>
+ <div class="top-actions">
+<button class="theme-toggle" id="installAppBtn" type="button" style="display:none">📲 نصب فیزیک‌یار</button>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="تغییر حالت روز و شب">☀️ حالت روز</button><div class="status"><span class="dot"></span> آماده محاسبه <span>•</span> فصل اول</div></div>
+</header>
+<section class="hero">
+ <div class="eyebrow">PHYSICS TOOLKIT / GRADE 11</div>
+ <h1>مفاهیم الکتریسیته را <span style="color:var(--accent)">ساده‌تر</span> محاسبه کن.</h1>
+ <p>کمیت‌ها را وارد کن، محاسبه را انجام بده و نتیجه را همراه با نماد علمی استاندارد ببین. مناسب تمرین و مرور فرمول‌های فصل اول.</p>
+ <div class="stats"><div class="stat"><b>۷</b> محاسبه فعال</div><div class="stat"><b>SI</b> واحدهای استاندارد</div><div class="stat"><b>۱۰⁻¹⁹</b> نمایش علمی</div></div>
+</section>
+<main class="workspace">
+ <aside class="card nav-card">
+  <div class="card-heading"><h2>ابزارهای محاسباتی</h2><span class="count">۰۷ مورد</span></div>
+  <input class="search" id="search" type="search" placeholder="جست‌وجوی فرمول یا موضوع...">
+  <nav class="nav-list" id="navList">
+   <button class="nav-item active" data-id="1"><span class="nav-icon">q</span><span><span class="nav-title">کوانتیده بودن بار</span><span class="nav-sub">بار بنیادی و تعداد بارها</span></span></button>
+   <button class="nav-item" data-id="2"><span class="nav-icon">F</span><span><span class="nav-title">نیروی کولن</span><span class="nav-sub">برهم‌کنش دو بار نقطه‌ای</span></span></button>
+   <button class="nav-item" data-id="3"><span class="nav-icon">E</span><span><span class="nav-title">میدان از نیرو و بار</span><span class="nav-sub">تعریف میدان الکتریکی</span></span></button>
+   <button class="nav-item" data-id="4"><span class="nav-icon">Eₚ</span><span><span class="nav-title">میدان بار نقطه‌ای</span><span class="nav-sub">میدان در فاصله مشخص</span></span></button>
+   <button class="nav-item" data-id="5"><span class="nav-icon">U</span><span><span class="nav-title">انرژی پتانسیل</span><span class="nav-sub">انرژی دو بار الکتریکی</span></span></button>
+   <button class="nav-item" data-id="6"><span class="nav-icon">V</span><span><span class="nav-title">اختلاف پتانسیل</span><span class="nav-sub">تغییر انرژی به ازای بار</span></span></button>
+   <button class="nav-item" data-id="7"><span class="nav-icon">E</span><span><span class="nav-title">میدان یکنواخت</span><span class="nav-sub">اختلاف پتانسیل و فاصله</span></span></button>
+  </nav>
+ </aside>
+ <section class="card content">
+  <div class="content-head"><div><div class="kicker">CALCULATOR / <span id="index">01</span></div><h2 id="title">کوانتیده بودن بار</h2><p id="description">مقدار بار الکتریکی با تعداد صحیحی از بارهای بنیادی تعیین می‌شود.</p></div><span class="badge">محاسبه دقیق</span></div>
+  <div class="formula"><div><div class="formula-label">فرمول مورد استفاده</div><div class="formula-value" id="formula">q = n × e</div></div><div class="formula-note" id="formulaNote">e = 1.6 × 10⁻¹⁹ C</div></div>
+  <div class="fields-title">مقادیر مسئله را وارد کن</div>
+  <div class="formula-note" style="margin:0 0 12px">ورودی توان‌دار هم پذیرفته می‌شود: 10^6 ، 2.5×10^-3 ، 3e8</div><form id="calcForm"><div class="fields" id="fields"></div><div class="keypad" id="keypad" aria-label="صفحه‌کلید علمی"><div class="keypad-head"><span>صفحه‌کلید علمی</span><span id="keyTarget">ابتدا یک کادر ورودی را انتخاب کن</span></div><div class="keypad-grid"><button class="key-btn" type="button" data-key="7">7</button><button class="key-btn" type="button" data-key="8">8</button><button class="key-btn" type="button" data-key="9">9</button><button class="key-btn special wide" type="button" data-key="back">⌫ حذف</button><button class="key-btn special wide" type="button" data-key="clear">پاک‌کردن</button><button class="key-btn" type="button" data-key="4">4</button><button class="key-btn" type="button" data-key="5">5</button><button class="key-btn" type="button" data-key="6">6</button><button class="key-btn special" type="button" data-key="×10^">×10ⁿ</button><button class="key-btn special" type="button" data-key="^">توان ^</button><button class="key-btn" type="button" data-key="1">1</button><button class="key-btn" type="button" data-key="2">2</button><button class="key-btn" type="button" data-key="3">3</button><button class="key-btn" type="button" data-key="0">0</button><button class="key-btn" type="button" data-key=".">.</button><button class="key-btn special" type="button" data-key="-">−</button><button class="key-btn special" type="button" data-key="+">+</button><button class="key-btn special" type="button" data-key="e">e</button><button class="key-btn special wide" type="button" data-key="×">×</button><button class="key-btn special wide" type="button" data-key="done">بستن</button></div></div><div class="actions"><button class="btn btn-primary" type="submit">محاسبه نتیجه <span aria-hidden="true">←</span></button><button class="btn btn-ghost" type="reset">پاک کردن مقادیر</button></div></form>
+  <div class="error" id="error" role="alert"></div>
+  <div class="result" id="result" aria-live="polite"><div class="result-top"><span class="result-label" id="resultLabel">نتیجه محاسبه</span><button class="copy" id="copy" type="button">کپی نتیجه</button></div><div class="result-number" id="resultNumber"></div><div class="result-unit" id="resultUnit"></div><div class="explain" id="explain"></div></div>
+  <div class="info"><strong>یادآوری:</strong> ورودی‌ها را با واحد مشخص‌شده وارد کن. در محاسبات این صفحه از k = 9 × 10⁹ N·m²/C² و e = 1.6 × 10⁻¹⁹ C استفاده می‌شود. این ابزار برای تمرین آموزشی است.</div>
+ </section>
+</main>
+<section class="card history"><div class="history-head"><h3>آخرین محاسبات</h3><button class="copy" id="clearHistory" type="button">پاک کردن سابقه</button></div><div class="history-list" id="history"><div class="history-empty">هنوز محاسبه‌ای انجام نشده است.</div></div></section>
+<footer class="footer"><span>فیزیک‌یار · نسخه وب</span><span>طراحی واکنش‌گرا برای موبایل و دسکتاپ</span></footer>
+</div>
+<script>
+const E_CHARGE=1.6e-19,K=9e9;
+const items={
+1:{title:"کوانتیده بودن بار",desc:"مقدار بار الکتریکی با تعداد صحیحی از بارهای بنیادی تعیین می‌شود.",formula:"q = n × e",note:"e = 1.6 × 10⁻¹⁹ C",fields:[["n","تعداد بارهای بنیادی","بدون واحد","مثلاً 3","integer"]],run:v=>[v.n*E_CHARGE,"C","بار الکتریکی","بار کل از حاصل‌ضرب تعداد بارهای بنیادی در بار بنیادی به دست می‌آید."]},
+2:{title:"نیروی کولن",desc:"اندازه نیروی الکتریکی بین دو بار نقطه‌ای را در فاصله مشخص محاسبه کن.",formula:"F = k × |q₁q₂| / r²",note:"k = 9 × 10⁹ N·m²/C²",fields:[["q1","بار الکتریکی اول","C","مثلاً 2 × 10⁻⁶"],["q2","بار الکتریکی دوم","C","مثلاً 3 × 10⁻⁶"],["r","فاصله دو بار","m","مثلاً 0.2"]],run:v=>{if(v.r<=0)throw"فاصله باید بزرگ‌تر از صفر باشد.";return[K*Math.abs(v.q1*v.q2)/v.r**2,"N","اندازه نیروی کولن","در این رابطه اندازه نیرو محاسبه می‌شود؛ علامت بارها در تعیین جاذبه یا دافعه بودن اثر دارد."]}},
+3:{title:"میدان از نیرو و بار",desc:"با داشتن نیروی وارد بر بار آزمایشی، اندازه میدان الکتریکی را پیدا کن.",formula:"E = |F| / |q|",note:"واحد میدان: N/C",fields:[["F","اندازه نیرو","N","مثلاً 0.04"],["q","بار الکتریکی","C","مثلاً 2 × 10⁻⁶"]],run:v=>{if(v.q===0)throw"بار الکتریکی نمی‌تواند صفر باشد.";return[Math.abs(v.F)/Math.abs(v.q),"N/C","اندازه میدان الکتریکی","میدان از تقسیم اندازه نیرو بر اندازه بار به دست می‌آید."]}},
+4:{title:"میدان بار نقطه‌ای",desc:"اندازه میدان الکتریکی ایجادشده توسط یک بار نقطه‌ای را محاسبه کن.",formula:"E = k × |q| / r²",note:"k = 9 × 10⁹ N·m²/C²",fields:[["q","بار الکتریکی","C","مثلاً 4 × 10⁻⁶"],["r","فاصله از بار","m","مثلاً 0.3"]],run:v=>{if(v.r<=0)throw"فاصله باید بزرگ‌تر از صفر باشد.";return[K*Math.abs(v.q)/v.r**2,"N/C","اندازه میدان الکتریکی","این رابطه اندازه میدان را می‌دهد؛ جهت میدان به علامت بار بستگی دارد."]}},
+5:{title:"انرژی پتانسیل الکتریکی",desc:"انرژی پتانسیل الکتریکی یک سامانه شامل دو بار نقطه‌ای را به دست بیاور.",formula:"U = k × q₁q₂ / r",note:"واحد انرژی: J",fields:[["q1","بار الکتریکی اول","C","مثلاً 2 × 10⁻⁶"],["q2","بار الکتریکی دوم","C","مثلاً -3 × 10⁻⁶"],["r","فاصله دو بار","m","مثلاً 0.5"]],run:v=>{if(v.r<=0)throw"فاصله باید بزرگ‌تر از صفر باشد.";return[K*v.q1*v.q2/v.r,"J","انرژی پتانسیل الکتریکی","علامت نتیجه با توجه به علامت حاصل‌ضرب دو بار تعیین می‌شود."]}},
+6:{title:"اختلاف پتانسیل",desc:"اختلاف پتانسیل را از تغییر انرژی پتانسیل و مقدار بار محاسبه کن.",formula:"ΔV = ΔU / q",note:"واحد اختلاف پتانسیل: V",fields:[["deltaU","تغییر انرژی پتانسیل","J","مثلاً 0.012"],["q","بار الکتریکی","C","مثلاً 3 × 10⁻⁶"]],run:v=>{if(v.q===0)throw"بار الکتریکی نمی‌تواند صفر باشد.";return[v.deltaU/v.q,"V","اختلاف پتانسیل الکتریکی","علامت اختلاف پتانسیل به علامت تغییر انرژی و بار بستگی دارد."]}},
+7:{title:"میدان الکتریکی یکنواخت",desc:"اندازه میدان یکنواخت را با استفاده از اختلاف پتانسیل و فاصله به دست بیاور.",formula:"E = |ΔV| / d",note:"واحد میدان: V/m = N/C",fields:[["v","اختلاف پتانسیل","V","مثلاً 120"],["d","فاصله دو نقطه","m","مثلاً 0.04"]],run:v=>{if(v.d<=0)throw"فاصله باید بزرگ‌تر از صفر باشد.";return[Math.abs(v.v)/v.d,"N/C","اندازه میدان الکتریکی","در میدان یکنواخت، اندازه میدان برابر اندازه اختلاف پتانسیل تقسیم بر فاصله است."]}}
+};
+let current=1,history=[];
+
+function parseScientificInput(raw){
+ let s=String(raw).trim().replace(/\s+/g,"").replace(/[−–]/g,"-").replace(/[٫،]/g,".");
+ s=s.replace(/[۰-۹]/g,d=>"۰۱۲۳۴۵۶۷۸۹".indexOf(d)).replace(/[٠-٩]/g,d=>"٠١٢٣٤٥٦٧٨٩".indexOf(d));
+ s=s.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]/g,ch=>({"⁰":"0","¹":"1","²":"2","³":"3","⁴":"4","⁵":"5","⁶":"6","⁷":"7","⁸":"8","⁹":"9","⁻":"-"}[ch]));
+ s=s.replace(/[×✕]/g,"*").replace(/[xX]/g,"*");
+ s=s.replace(/در/g,"*").replace(/به‌توان/g,"^").replace(/بهتوان/g,"^").replace(/منفی/g,"-").replace(/مثبت/g,"+");
+ let m=s.match(/^([+-]?(?:\d+(?:\.\d*)?|\.\d+))\*?10\^?([+-]?\d+)$/);
+ if(m) return Number(m[1])*Math.pow(10,Number(m[2]));
+ if(/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)[eE][+-]?\d+$/.test(s)) return Number(s);
+ m=s.match(/^([+-]?(?:\d+(?:\.\d*)?|\.\d+))\^([+-]?\d+)$/);
+ if(m) return Math.pow(Number(m[1]),Number(m[2]));
+ if(/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(s)) return Number(s);
+ throw new Error("عدد را به شکل 4×10^-6 یا 4e-6 یا ۴ در ۱۰ به توان منفی ۶ وارد کن.");
+}
+
+const $=id=>document.getElementById(id);
+function render(id){
+ current=id;const c=items[id];
+ $("index").textContent=String(id).padStart(2,"0");$("title").textContent=c.title;$("description").textContent=c.desc;
+ $("formula").textContent=c.formula;$("formulaNote").textContent=c.note;
+ $("navList").querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",Number(b.dataset.id)===id));
+ $("fields").innerHTML=c.fields.map(([key,label,unit,placeholder,type])=>`<div class="field"><label for="${key}">${label}<span class="unit">(${unit})</span></label><input id="${key}" name="${key}" type="text" inputmode="none" autocapitalize="off" spellcheck="false" autocomplete="off" placeholder="${placeholder}" required></div>`).join("");
+ $("result").classList.remove("show");$("error").style.display="none";
+}
+function formatScientific(value){
+ if(!Number.isFinite(value))throw"نتیجه خارج از محدوده قابل نمایش است.";
+ if(value===0)return"0";
+ const [mantissa,exp]=value.toExponential(5).split("e");
+ const sup=String(Number(exp)).replace(/-/g,"⁻").replace(/[0-9]/g,d=>"⁰¹²³⁴⁵⁶⁷⁸⁹"[Number(d)]);
+ return `${mantissa} × 10<sup>${sup}</sup>`;
+}
+function addHistory(name,value,unit){
+ history.unshift({name,value,unit});history=history.slice(0,5);
+ $("history").innerHTML=history.map(h=>`<div class="history-row"><span>${h.name}</span><span>${formatScientific(h.value).replace(/<[^>]*>/g,"")} ${h.unit}</span></div>`).join("");
+}
+$("navList").addEventListener("click",e=>{const b=e.target.closest(".nav-item");if(b)render(Number(b.dataset.id));});
+$("search").addEventListener("input",e=>{const q=e.target.value.trim();$("navList").querySelectorAll(".nav-item").forEach(b=>{b.style.display=b.textContent.includes(q)?"flex":"none";});});
+$("calcForm").addEventListener("submit",e=>{
+ e.preventDefault();$("error").style.display="none";
+ try{
+  const c=items[current],v={};
+  for(const [key,label,, ,type] of c.fields){const raw=$(key).value;if(raw==="")throw"لطفاً همه مقادیر را وارد کن.";v[key]=parseScientificInput(raw);if(!Number.isFinite(v[key]))throw"یکی از مقادیر واردشده معتبر نیست.";if(type==="integer"&&!Number.isInteger(v[key]))throw"تعداد بارها باید عدد صحیح باشد.";}
+  const [value,unit,label,explain]=c.run(v);
+  if(!Number.isFinite(value))throw"نتیجه محاسبه قابل نمایش نیست.";
+  $("resultLabel").textContent=label;$("resultNumber").innerHTML=formatScientific(value);$("resultUnit").textContent=unit;$("explain").textContent=explain;
+  $("result").classList.add("show");addHistory(c.title,value,unit);
+ }catch(err){$("error").textContent=String(err);$("error").style.display="block";$("result").classList.remove("show");}
+});
+$("calcForm").addEventListener("reset",()=>{$("result").classList.remove("show");$("error").style.display="none";});
+$("copy").addEventListener("click",async()=>{
+ const text=$("resultNumber").textContent+" "+$("resultUnit").textContent;
+ try{await navigator.clipboard.writeText(text);$("copy").textContent="کپی شد ✓";setTimeout(()=>$("copy").textContent="کپی نتیجه",1500);}
+ catch{$("copy").textContent="کپی در دسترس نیست";}
+});
+$("clearHistory").addEventListener("click",()=>{history=[];$("history").innerHTML='<div class="history-empty">هنوز محاسبه‌ای انجام نشده است.</div>';});
+
+let activeInput=null;
+const keypad=$("keypad");
+$("fields").addEventListener("focusin",e=>{
+ if(e.target.matches("input")){activeInput=e.target;$("keyTarget").textContent="ورودی فعال: "+(e.target.name||"عدد");}
+});
+keypad.addEventListener("pointerdown",e=>{if(e.target.closest("button"))e.preventDefault();});
+keypad.addEventListener("click",e=>{
+ const b=e.target.closest("[data-key]"); if(!b)return;
+ if(!activeInput){const first=$("fields").querySelector("input");if(first){first.focus();activeInput=first;}else return;}
+ const key=b.dataset.key, el=activeInput;
+ if(key==="done"){el.blur();return;}
+ if(key==="clear"){el.value="";el.dispatchEvent(new Event("input",{bubbles:true}));el.focus();return;}
+ const start=el.selectionStart??el.value.length,end=el.selectionEnd??el.value.length;
+ let insert=key, next=start+insert.length, value=el.value;
+ if(key==="back"){
+   if(start!==end){value=value.slice(0,start)+value.slice(end);next=start;}
+   else if(start>0){value=value.slice(0,start-1)+value.slice(end);next=start-1;}
+ }else{
+   value=value.slice(0,start)+insert+value.slice(end);
+ }
+ el.value=value;el.focus();el.setSelectionRange(next,next);
+ el.dispatchEvent(new Event("input",{bubbles:true}));
+});
+
+
+const themeToggle = $("themeToggle");
+function applyTheme(theme){
+ document.body.classList.toggle("light", theme === "light");
+ themeToggle.textContent = theme === "light" ? "🌙 حالت شب" : "☀️ حالت روز";
+ themeToggle.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
+ try{localStorage.setItem("physicyar-theme",theme);}catch(e){}
+}
+let savedTheme="dark";
+try{savedTheme=localStorage.getItem("physicyar-theme")||"dark";}catch(e){}
+applyTheme(savedTheme);
+themeToggle.addEventListener("click",()=>applyTheme(document.body.classList.contains("light")?"dark":"light"));
+
+render(1);
+</script>
+<script>
+
+// PWA: ثبت سرویس‌ورکر و نمایش گزینه نصب در مرورگرهای پشتیبانی‌شده
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+let deferredInstallPrompt = null;
+const installAppBtn = document.getElementById("installAppBtn");
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+  if (installAppBtn) installAppBtn.style.display = "inline-flex";
+});
+if (installAppBtn) {
+  installAppBtn.addEventListener("click", async () => {
+    if (!deferredInstallPrompt) {
+      alert("برای نصب، این صفحه را در Chrome باز کنید و از منوی ⋮ گزینه Install app یا Add to Home screen را بزنید.");
+      return;
+    }
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    installAppBtn.style.display = "none";
+  });
+}
+
+</script>
+</body>
+</html>
