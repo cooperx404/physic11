@@ -28,13 +28,13 @@ body.light .status,body.light .stat{background:#ffffffcc}body.light .card{backgr
 </header>
 <section class="hero">
  <div class="eyebrow">PHYSICS TOOLKIT / GRADE 11</div>
- <h1>مفاهیم الکتریسیته را <span style="color:var(--accent)">ساده‌تر</span> محاسبه کن.</h1>
+ <h1>مفاهیم فیزیک یازدهم را <span style="color:var(--accent)">ساده‌تر</span> محاسبه کن.</h1>
  <p>کمیت‌ها را وارد کن، محاسبه را انجام بده و نتیجه را همراه با نماد علمی استاندارد ببین.</p>
- <div class="stats"><div class="stat"><b>۷</b> محاسبه فعال</div><div class="stat"><b>SI</b> واحدهای استاندارد</div><div class="stat"><b>۱۰⁻¹⁹</b> نمایش علمی</div></div>
+ <div class="stats"><div class="stat"><b>۱۱</b> محاسبه فعال</div><div class="stat"><b>SI</b> واحدهای استاندارد</div><div class="stat"><b>۱۰⁻¹⁹</b> نمایش علمی</div></div>
 </section>
 <main class="workspace">
 <aside class="card nav-card">
- <div class="card-heading"><h2>ابزارهای محاسباتی</h2><span class="count">۰۷ مورد</span></div>
+ <div class="card-heading"><h2>ابزارهای محاسباتی</h2><span class="count">۱۱ مورد</span></div>
  <input class="search" id="search" type="search" placeholder="جست‌وجوی فرمول یا موضوع...">
  <nav class="nav-list" id="navList">
  <button class="nav-item active" data-id="1"><span class="nav-icon">q</span><span><span class="nav-title">کوانتیده بودن بار</span><span class="nav-sub">بار بنیادی و تعداد بارها</span></span></button>
@@ -44,6 +44,10 @@ body.light .status,body.light .stat{background:#ffffffcc}body.light .card{backgr
  <button class="nav-item" data-id="5"><span class="nav-icon">U</span><span><span class="nav-title">انرژی پتانسیل</span><span class="nav-sub">انرژی دو بار الکتریکی</span></span></button>
  <button class="nav-item" data-id="6"><span class="nav-icon">V</span><span><span class="nav-title">اختلاف پتانسیل</span><span class="nav-sub">تغییر انرژی به ازای بار</span></span></button>
  <button class="nav-item" data-id="7"><span class="nav-icon">E</span><span><span class="nav-title">میدان یکنواخت</span><span class="nav-sub">اختلاف پتانسیل و فاصله</span></span></button>
+ <button class="nav-item" data-id="8"><span class="nav-icon">C</span><span><span class="nav-title">ظرفیت خازن</span><span class="nav-sub">بار الکتریکی و ولتاژ</span></span></button>
+ <button class="nav-item" data-id="9"><span class="nav-icon">C₀</span><span><span class="nav-title">ظرفیت خازن تخت</span><span class="nav-sub">مساحت صفحات و فاصله</span></span></button>
+ <button class="nav-item" data-id="10"><span class="nav-icon">κ</span><span><span class="nav-title">خازن با دی‌الکتریک</span><span class="nav-sub">ثابت دی‌الکتریک و هندسه خازن</span></span></button>
+ <button class="nav-item" data-id="11"><span class="nav-icon">U</span><span><span class="nav-title">انرژی خازن</span><span class="nav-sub">ظرفیت و ولتاژ خازن</span></span></button>
  </nav>
 </aside>
 <section class="card content">
@@ -69,7 +73,7 @@ body.light .status,body.light .stat{background:#ffffffcc}body.light .card{backgr
 </div>
 <script>
 "use strict";
-const E_CHARGE=1.6e-19,K=9e9;
+const E_CHARGE=1.6e-19,K=9e9,EPSILON_0=8.85e-12;
 const items={
 1:{title:"کوانتیده بودن بار",desc:"مقدار بار الکتریکی با تعداد صحیحی از بارهای بنیادی تعیین می‌شود.",formula:"q = n × e",note:"e = 1.6 × 10⁻¹⁹ C",fields:[["n","تعداد بارهای بنیادی","بدون واحد","مثلاً 3","integer"]],run:v=>[v.n*E_CHARGE,"C","بار الکتریکی","بار کل از حاصل‌ضرب تعداد بارهای بنیادی در بار بنیادی به دست می‌آید."]},
 2:{title:"نیروی کولن",desc:"اندازه نیروی الکتریکی بین دو بار نقطه‌ای را در فاصله مشخص محاسبه کن.",formula:"F = k × |q₁q₂| / r²",note:"k = 9 × 10⁹ N·m²/C²",fields:[["q1","بار الکتریکی اول","C","مثلاً 2 × 10⁻⁶"],["q2","بار الکتریکی دوم","C","مثلاً 3 × 10⁻⁶"],["r","فاصله دو بار","m","مثلاً 0.2"]],run:v=>{if(v.r<=0)throw"فاصله باید بزرگ‌تر از صفر باشد.";return[K*Math.abs(v.q1*v.q2)/v.r**2,"N","اندازه نیروی کولن","در این رابطه اندازه نیرو محاسبه می‌شود؛ علامت بارها در تعیین جاذبه یا دافعه بودن اثر دارد."]}},
@@ -78,6 +82,10 @@ const items={
 5:{title:"انرژی پتانسیل الکتریکی",desc:"انرژی پتانسیل الکتریکی یک سامانه شامل دو بار نقطه‌ای را به دست بیاور.",formula:"U = k × q₁q₂ / r",note:"واحد انرژی: J",fields:[["q1","بار الکتریکی اول","C","مثلاً 2 × 10⁻⁶"],["q2","بار الکتریکی دوم","C","مثلاً -3 × 10⁻⁶"],["r","فاصله دو بار","m","مثلاً 0.5"]],run:v=>{if(v.r<=0)throw"فاصله باید بزرگ‌تر از صفر باشد.";return[K*v.q1*v.q2/v.r,"J","انرژی پتانسیل الکتریکی","علامت نتیجه با توجه به علامت حاصل‌ضرب دو بار تعیین می‌شود."]}},
 6:{title:"اختلاف پتانسیل",desc:"اختلاف پتانسیل را از تغییر انرژی پتانسیل و مقدار بار محاسبه کن.",formula:"ΔV = ΔU / q",note:"واحد اختلاف پتانسیل: V",fields:[["deltaU","تغییر انرژی پتانسیل","J","مثلاً 0.012"],["q","بار الکتریکی","C","مثلاً 3 × 10⁻⁶"]],run:v=>{if(v.q===0)throw"بار الکتریکی نمی‌تواند صفر باشد.";return[v.deltaU/v.q,"V","اختلاف پتانسیل الکتریکی","علامت اختلاف پتانسیل به علامت تغییر انرژی و بار بستگی دارد."]}},
 7:{title:"میدان الکتریکی یکنواخت",desc:"اندازه میدان یکنواخت را با استفاده از اختلاف پتانسیل و فاصله به دست بیاور.",formula:"E = |ΔV| / d",note:"واحد میدان: V/m = N/C",fields:[["v","اختلاف پتانسیل","V","مثلاً 120"],["d","فاصله دو نقطه","m","مثلاً 0.04"]],run:v=>{if(v.d<=0)throw"فاصله باید بزرگ‌تر از صفر باشد.";return[Math.abs(v.v)/v.d,"N/C","اندازه میدان الکتریکی","در میدان یکنواخت، اندازه میدان برابر اندازه اختلاف پتانسیل تقسیم بر فاصله است."]}}
+,8:{title:"ظرفیت خازن",desc:"ظرفیت خازن را از روی بار الکتریکی و اختلاف پتانسیل محاسبه کن.",formula:"C = |Q| / |V|",note:"واحد ظرفیت: F (فاراد)",fields:[["Q","بار خازن","C","مثلاً 2 × 10⁻⁶"],["V","ولتاژ خازن","V","مثلاً 12"]],run:v=>{if(v.V===0)throw"ولتاژ نباید صفر باشد.";return[Math.abs(v.Q)/Math.abs(v.V),"F","ظرفیت خازن","ظرفیت از تقسیم اندازه بار ذخیره‌شده بر اندازه ولتاژ به دست می‌آید."]}}
+,9:{title:"ظرفیت خازن تخت",desc:"ظرفیت خازن تخت را با مساحت صفحات و فاصله آن‌ها محاسبه کن.",formula:"C = ε₀ × A / d",note:"ε₀ = 8.85 × 10⁻¹² F/m",fields:[["A","مساحت صفحات","m²","مثلاً 0.02"],["d","فاصله صفحات","m","مثلاً 0.001"]],run:v=>{if(v.A<=0||v.d<=0)throw"مساحت و فاصله باید بزرگ‌تر از صفر باشند.";return[EPSILON_0*v.A/v.d,"F","ظرفیت خازن تخت","این رابطه برای خازن تخت در خلأ یا تقریباً هوا نوشته شده است."]}}
+,10:{title:"ظرفیت خازن با دی‌الکتریک",desc:"ظرفیت خازن تخت را با در نظر گرفتن ثابت دی‌الکتریک محاسبه کن.",formula:"C = κ × ε₀ × A / d",note:"κ: ثابت دی‌الکتریک (بدون واحد)",fields:[["A","مساحت صفحات","m²","مثلاً 0.02"],["d","فاصله صفحات","m","مثلاً 0.001"],["dielectric","ثابت دی‌الکتریک","بدون واحد","مثلاً 4"]],run:v=>{if(v.A<=0||v.d<=0||v.dielectric<=0)throw"همه مقادیر باید بزرگ‌تر از صفر باشند.";return[v.dielectric*EPSILON_0*v.A/v.d,"F","ظرفیت خازن با دی‌الکتریک","وجود دی‌الکتریک ظرفیت خازن را به اندازه ثابت دی‌الکتریک افزایش می‌دهد."]}}
+,11:{title:"انرژی خازن",desc:"انرژی ذخیره‌شده در خازن را با ظرفیت و ولتاژ آن محاسبه کن.",formula:"U = ½ × C × V²",note:"واحد انرژی: J (ژول)",fields:[["C","ظرفیت خازن","F","مثلاً 10⁻⁶"],["V","ولتاژ خازن","V","مثلاً 12"]],run:v=>{if(v.C<0)throw"ظرفیت خازن نمی‌تواند منفی باشد.";return[0.5*v.C*v.V**2,"J","انرژی ذخیره‌شده در خازن","انرژی خازن برابر نصف حاصل‌ضرب ظرفیت در مجذور ولتاژ است."]}}
 };
 const $=id=>document.getElementById(id);
 let current=1,activeInput=null,history=[];
