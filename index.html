@@ -2,9 +2,21 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1220">
-<title>فیزیک‌یار | ماشین‌حساب فیزیک یازدهم</title>
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="فیزیک‌یار؛ ابزار آموزشی و محاسباتی فیزیک پایه یازدهم با ماشین‌حساب فرمول‌ها، آموزش مفاهیم و تبدیل یکاها.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="application-name" content="فیزیک‌یار">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:site_name" content="فیزیک‌یار">
+<meta property="og:title" content="فیزیک‌یار | ابزار آموزشی و ماشین‌حساب فیزیک یازدهم">
+<meta property="og:description" content="ماشین‌حساب فیزیک، آموزش مفاهیم و تبدیل یکاها در یک ابزار آموزشی.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="فیزیک‌یار | فیزیک یازدهم">
+<meta name="twitter:description" content="ابزار آموزشی و محاسباتی فیزیک پایه یازدهم.">
+<title>فیزیک‌یار | ابزار آموزشی و ماشین‌حساب فیزیک یازدهم</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 :root{--bg:#0a1020;--surface:#111b30;--surface2:#17243d;--surface3:#1c2c49;--text:#edf3ff;--muted:#9aabc7;--line:#2b3c5b;--accent:#55dfc1;--good:#83e6b2;--shadow:0 24px 70px #0005}
@@ -16,27 +28,157 @@
 .keypad{margin-top:16px;padding:14px;background:#0b1426;border:1px solid var(--line);border-radius:15px}.keypad-head{display:flex;justify-content:space-between;gap:8px;margin-bottom:10px;color:var(--muted);font-size:11px}.keypad-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.key-btn{min-height:43px;border:1px solid #344866;border-radius:9px;background:#1a2942;color:var(--text);font-size:15px;font-weight:700;cursor:pointer;touch-action:manipulation}.key-btn.special{color:var(--accent);background:#18343a;border-color:#32605d}.key-btn.wide{font-size:12px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:11px;padding:11px 18px;cursor:pointer;font-size:12px;font-weight:700}.btn-primary{background:linear-gradient(110deg,#75f0d0,#51cbb8);color:#06251f}.btn-ghost{background:#263754;color:#dbe7fa;border:1px solid #3a4c6d}.error{display:none;margin-top:15px;background:#3b202c;border:1px solid #794252;color:#ffb4bd;border-radius:11px;padding:11px 13px;font-size:11px}.result{display:none;margin-top:20px;border:1px solid #367b70;background:linear-gradient(130deg,#123a3c,#102b39);border-radius:16px;padding:17px}.result.show{display:block}.result-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.result-label{font-size:11px;color:#a9ddd3}.copy{background:#24534f;border:1px solid #3c8278;color:#cafff1;border-radius:8px;padding:6px 10px;font-size:10px;cursor:pointer}.result-number{font-size:clamp(22px,4vw,32px);font-weight:800;color:#e4fff7;direction:ltr;text-align:right;margin:10px 0 3px;overflow-wrap:anywhere}.result-unit{font-size:12px;color:#a9ddd3;direction:ltr;text-align:right}.explain{font-size:10px;color:#9fb9b5;margin-top:10px;line-height:1.8}.info{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:10px;line-height:2}.info strong{color:#d4e0f4}.history{margin-top:18px;padding:17px}.history-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.history h3{font-size:13px;margin:0}.history-list{display:grid;gap:8px}.history-empty{font-size:11px;color:var(--muted);padding:5px 0}.history-row{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#0c1729;border:1px solid var(--line);padding:10px 12px;border-radius:10px;font-size:11px}.history-row span:last-child{direction:ltr;color:#b8f5e5;font-weight:600;text-align:left}.footer{display:flex;justify-content:space-between;gap:12px;margin-top:22px;color:#7385a3;font-size:10px}
 body.light{--bg:#f2f6fc;--surface:#fff;--surface2:#eef3fa;--surface3:#e4ebf5;--text:#17243a;--muted:#60718b;--line:#d5dfec;--accent:#087f70;--good:#16804b;--shadow:0 18px 48px #1b355015;background:radial-gradient(ellipse at 80% -10%,#d9e8ff 0,transparent 38%),radial-gradient(ellipse at 0 55%,#dff5ef 0,transparent 35%),var(--bg);color:var(--text)}
 body.light .status,body.light .stat{background:#ffffffcc}body.light .card{background:linear-gradient(155deg,#fff,#f8fbff)}body.light .search,body.light .field input,body.light .keypad,body.light .history-row{background:#f5f8fc;color:var(--text)}body.light .field label{color:#40516b}body.light .key-btn{background:#e8eef7;color:#1b2b43;border-color:#c8d5e5}body.light .key-btn.special{color:#087f70;background:#e0f3ef;border-color:#a9d9d0}body.light .btn-ghost{background:#e8eef7;color:#263b58;border-color:#c8d5e5}body.light .formula{background:#edf4fb;border-color:#cbd9e9}body.light .formula-value,body.light .history-row span:last-child{color:#087f70}body.light .nav-icon{background:#e5edf7;color:#087f70}body.light .nav-item.active{background:linear-gradient(100deg,#dff4ef,#e8efff);border-color:#8bcfc1}body.light .count{background:#e8eef7}body.light .result{background:linear-gradient(130deg,#e2f5ef,#e8f2fb);border-color:#9acfc2}body.light .result-label,body.light .result-unit,body.light .explain{color:#315f59}body.light .result-number{color:#173f39}body.light .copy{background:#d2eee7;border-color:#9acfc2;color:#14594e}body.light .info strong{color:#263b58}body.light .error{background:#fff0f2;border-color:#edb9c2;color:#a51f36}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 @media(max-width:850px){.workspace{grid-template-columns:1fr}.nav-card{position:static}.nav-list{grid-template-columns:repeat(2,minmax(0,1fr))}.content{min-height:0}}
 @media(max-width:540px){.shell{padding:17px 12px 35px}.topbar{margin-bottom:24px}.status{font-size:0;padding:10px}.nav-list{grid-template-columns:1fr 1fr}.nav-item{padding:8px;gap:8px}.nav-icon{width:31px;height:31px}.nav-title{font-size:10px}.content{padding:17px}.content-head h2{font-size:19px}.fields{grid-template-columns:1fr}.formula{align-items:flex-start;flex-direction:column}.top-actions{gap:6px}.theme-toggle{padding:8px 10px;font-size:11px}}
+
+.section-switch{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;padding:10px;margin:0 0 18px;position:sticky;top:0;z-index:50;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;background:rgba(17,27,48,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.section-switch::-webkit-scrollbar{display:none}
+.section-tab{flex:0 0 auto;white-space:nowrap;border:1px solid var(--line);background:transparent;color:var(--text);padding:9px 14px;border-radius:11px;cursor:pointer;font-size:12px;font-weight:700}
+.section-tab.active{background:#1c4a50aa;border-color:#55dfc155;color:var(--accent)}
+.extra-panel{padding:24px;margin-bottom:18px}
+.lesson-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.lesson-card{border:1px solid var(--line);background:#0c1729;border-radius:15px;padding:16px}
+.lesson-number{font-size:10px;color:var(--accent);font-weight:800}
+.lesson-card h3{font-size:14px;margin:8px 0}
+.lesson-card p{font-size:11px;line-height:2;color:var(--muted)}
+.lesson-formula{direction:ltr;text-align:center;background:#152940;border:1px solid #2b4561;border-radius:10px;padding:11px;color:#b8f5e5;font-weight:800;font-size:17px}
+.lesson-note{margin-bottom:12px}
+.study-tip{margin-top:16px;padding:13px;border-radius:12px;background:#18343a;color:#c9e9e1;font-size:11px;line-height:2}
+.converter{max-width:650px;display:grid;gap:14px}
+.converter select{width:100%;background:#0b1426;border:1px solid var(--line);border-radius:11px;padding:12px;color:var(--text);font:inherit;font-size:12px}
+.converter-result{padding:16px;border:1px solid #367b70;background:#123a3c;border-radius:12px;color:#e4fff7;font-size:14px;direction:ltr;text-align:center;overflow-wrap:anywhere}
+.solution{margin-top:15px;padding:16px;border:1px solid #385b78;background:#101f33;border-radius:15px}
+.solution:not([hidden]){display:block}
+.solution h3{font-size:13px;margin:0 0 12px;color:#b8f5e5}
+.solution-step{padding:10px 12px;margin-top:8px;border-radius:10px;background:#0b1426;border:1px solid var(--line);font-size:11px;line-height:2}
+.solution-step b{display:block;color:var(--accent);margin-bottom:3px}
+.solution-math{direction:ltr;text-align:left;overflow-wrap:anywhere;color:#e4fff7;font-family:monospace;font-size:12px}
+body.light .lesson-card{background:#f5f8fc}
+body.light .lesson-formula{background:#edf4fb;color:#087f70}
+body.light .study-tip{background:#e0f3ef;color:#24594f}
+body.light .converter select{background:#f5f8fc;color:var(--text)}
+body.light .converter-result{background:#e2f5ef;color:#173f39}
+body.light .solution{background:#f0f6fc;border-color:#cbd9e9}
+body.light .solution-step{background:#fff}
+body.light .solution-math{color:#173f39}
+@media(max-width:650px){.lesson-grid{grid-template-columns:1fr}.section-switch{gap:6px;padding:8px 9px}.section-tab{flex:0 0 auto;padding:9px 11px;font-size:11px}.extra-panel{padding:16px}}
+
+
+.tool-chapter-heading{
+ grid-column:1/-1;margin:12px 2px 2px;padding:10px 11px;
+ border-right:3px solid var(--accent);border-radius:8px;
+ background:var(--surface-2,rgba(120,140,160,.10));
+ color:var(--text);font-size:12px;font-weight:800;line-height:1.8
+}
+.tool-chapter-heading small{display:block;color:var(--muted);font-size:10px;font-weight:500}
+
+.contact-card{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:20px;border:1px solid var(--line);border-radius:16px;background:#0c1729}
+.contact-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:15px;background:#18343a;color:var(--accent);font-size:25px;flex:none}
+.contact-copy{flex:1;min-width:210px}
+.contact-copy h3{font-size:14px;margin:0 0 6px}
+.contact-copy p{font-size:11px;color:var(--muted);margin:0 0 9px;line-height:1.9}
+.contact-email{color:var(--accent);font-size:14px;font-weight:800;direction:ltr;unicode-bidi:embed;text-decoration:none;overflow-wrap:anywhere}
+.contact-email:hover{text-decoration:underline}
+.contact-button{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+body.light .contact-card{background:#f5f8fc}
+body.light .contact-icon{background:#e0f3ef}
+@media(max-width:540px){.contact-card{align-items:flex-start}.contact-button{width:100%}}
+
+/* Bilingual layout support */
+html[dir="ltr"] body{font-family:Inter,Arial,sans-serif}
+html[dir="ltr"] .nav-item{text-align:left}
+html[dir="ltr"] .tool-chapter-heading{border-right:0;border-left:3px solid var(--accent)}
+html[dir="ltr"] .unit{margin-left:4px;margin-right:0}
+html[dir="ltr"] .study-tip ol{padding-left:22px;padding-right:0}
+html[dir="ltr"] .content-head,html[dir="ltr"] .card-heading{text-align:left}
+html[dir="ltr"] .result-number,html[dir="ltr"] .result-unit{text-align:left}
+html[dir="ltr"] .solution-math{text-align:left}
+
+
+/* Refined visual system */
+:root{--radius-lg:20px;--radius-md:14px;--accent-soft:rgba(85,223,193,.12)}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{background:radial-gradient(ellipse at 85% 0%,rgba(57,105,157,.22),transparent 34%),var(--bg);letter-spacing:0}
+.shell{max-width:1160px;padding:24px 24px 44px}
+.topbar{margin-bottom:28px;padding:13px 16px;border:1px solid var(--line);border-radius:18px;background:rgba(13,22,39,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.brand{gap:11px}.logo{width:44px;height:44px;border-radius:14px;box-shadow:0 7px 20px rgba(85,223,193,.15)}
+.brand-name{font-size:17px;letter-spacing:-.2px}.brand-sub{font-size:10px}
+.top-actions{gap:7px}.status,.theme-toggle{padding:8px 12px;font-size:11px}
+.hero{max-width:780px;margin:0 auto 24px;text-align:center}.eyebrow{letter-spacing:1.2px;font-size:10px}
+.hero h1{font-size:clamp(28px,4vw,40px);letter-spacing:-.7px;margin:9px 0 8px}
+.hero p{max-width:650px;margin:auto;font-size:13px;line-height:2.05}
+.stats{justify-content:center;gap:8px;margin-top:16px}.stat{padding:7px 11px;border-radius:999px;background:rgba(16,26,45,.72);font-size:10px}.stat b{font-size:12px}
+.section-switch{max-width:100%;width:max-content;margin:0 auto 18px;padding:7px;gap:5px;border-radius:16px;top:8px;background:rgba(13,22,39,.91);box-shadow:0 10px 35px rgba(0,0,0,.18)}
+.section-tab{padding:10px 15px;border-radius:11px;font-size:11px;font-weight:700;transition:background .18s ease,border-color .18s ease,transform .18s ease}
+.section-tab:hover{transform:translateY(-1px)}
+.section-tab.active{background:var(--accent-soft);border-color:rgba(85,223,193,.45);color:var(--accent)}
+.workspace{grid-template-columns:290px minmax(0,1fr);gap:16px}
+.card{border-radius:20px;box-shadow:0 16px 48px rgba(0,0,0,.14)}
+.nav-card{padding:15px;top:84px}.card-heading{margin:2px 2px 12px}.card-heading h2{font-size:13px}
+.search{border-radius:12px;padding:11px 13px;margin-bottom:10px}
+.nav-list{gap:5px}.nav-item{padding:9px;border-radius:12px;gap:10px}.nav-item.active{box-shadow:inset 3px 0 0 var(--accent)}
+.nav-icon{width:34px;height:34px;border-radius:10px}.nav-title{font-size:11px}.nav-sub{font-size:9px}
+.content{padding:26px;min-height:560px}.content-head{margin-bottom:20px}.content-head h2{font-size:21px;letter-spacing:-.3px}
+.formula,.keypad,.result,.contact-card{border-radius:15px}.field input{border-radius:12px}.field label{font-weight:600}
+.btn{transition:transform .16s ease,filter .16s ease}.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn:focus-visible,.theme-toggle:focus-visible,.section-tab:focus-visible,.nav-item:focus-visible,.key-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.extra-panel{padding:26px}.lesson-card{border-radius:15px}.footer{padding:15px 2px;border-top:1px solid var(--line);font-size:10px}
+body.light .topbar,body.light .section-switch{background:rgba(255,255,255,.9)}
+body.light .stat{background:rgba(255,255,255,.8)}
+body.light .nav-item.active{box-shadow:inset 3px 0 0 var(--accent)}
+@media(max-width:850px){
+ .shell{padding:16px 14px 34px}.topbar{margin-bottom:22px;padding:11px 12px}
+ .workspace{grid-template-columns:1fr;gap:12px}.nav-card{position:static;padding:13px}
+ .nav-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .section-switch{width:100%;justify-content:flex-start;margin-bottom:14px;top:0}
+ .content{padding:21px}
+}
+@media(max-width:540px){
+ .shell{padding:10px 10px 28px}.topbar{border-radius:15px;gap:8px;align-items:center}
+ .logo{width:39px;height:39px;border-radius:12px;font-size:22px}.brand-name{font-size:15px}.brand-sub{font-size:9px}
+ .top-actions{gap:5px}.theme-toggle{padding:7px 9px;font-size:10px}.status{display:none}
+ .hero{margin-bottom:18px;padding:0 5px}.hero h1{font-size:27px;line-height:1.5}.hero p{font-size:11px;line-height:1.9}
+ .stats{gap:6px;margin-top:13px}.stat{font-size:9px;padding:6px 9px}.stat b{font-size:10px}
+ .section-switch{position:sticky;z-index:60;top:5px;gap:5px;padding:6px;border-radius:13px;overflow-x:auto;scroll-snap-type:x proximity}
+ .section-tab{scroll-snap-align:start;padding:9px 12px;font-size:10px}
+ .nav-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.nav-item{padding:7px;gap:7px}.nav-icon{width:30px;height:30px;font-size:12px}.nav-title{font-size:10px}.nav-sub{font-size:8px}
+ .content{padding:16px}.content-head h2{font-size:18px}.content-head p{font-size:11px}.badge{font-size:9px;padding:5px 8px}
+ .extra-panel{padding:16px}.fields{gap:11px}.actions .btn{flex:1}
+ .footer{flex-direction:column;gap:5px;text-align:center}
+}
+@media(min-width:851px){.section-switch{position:sticky;top:8px;z-index:70}}
+
 </style>
 </head>
 <body>
 <div class="shell">
 <header class="topbar">
  <div class="brand"><div class="logo">∑</div><div><div class="brand-name">فیزیک‌یار</div><div class="brand-sub">ماشین‌حساب هوشمند فیزیک یازدهم</div></div></div>
- <div class="top-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="تغییر حالت روز و شب">☀️ حالت روز</button><div class="status"><span class="dot"></span> آماده محاسبه</div></div>
+ <div class="top-actions"><button class="theme-toggle" id="languageToggle" type="button" aria-label="Switch language">English</button><button class="theme-toggle" id="themeToggle" type="button" aria-label="تغییر حالت روز و شب">☀️ حالت روز</button><div class="status"><span class="dot"></span> آماده محاسبه</div></div>
 </header>
 <section class="hero">
  <div class="eyebrow">PHYSICS TOOLKIT / GRADE 11</div>
- <h1>مفاهیم فیزیک یازدهم را <span style="color:var(--accent)">ساده‌تر</span> محاسبه کن.</h1>
+ <h1>مفاهیم فیزیک را <span style="color:var(--accent)">ساده‌تر</span> محاسبه کن.</h1>
  <p>کمیت‌ها را وارد کن، محاسبه را انجام بده و نتیجه را همراه با نماد علمی استاندارد ببین.</p>
- <div class="stats"><div class="stat"><b>۱۱</b> محاسبه فعال</div><div class="stat"><b>SI</b> واحدهای استاندارد</div><div class="stat"><b>۱۰⁻¹⁹</b> نمایش علمی</div></div>
+ <div class="stats"><div class="stat"><b>۲۵</b> محاسبه فعال</div><div class="stat"><b>SI</b> واحدهای استاندارد</div><div class="stat"><b>۱۰⁻¹⁹</b> نمایش علمی</div></div>
 </section>
-<main class="workspace">
+
+<section class="section-switch card" aria-label="بخش‌های سایت">
+ <button class="section-tab active" data-section="calculator" type="button">🧮 ماشین‌حساب</button>
+ <button class="section-tab" data-section="learn" type="button">📘 آموزش</button>
+ <button class="section-tab" data-section="tools" type="button">🔁 تبدیل واحد</button>
+  <button class="section-tab" data-section="contact" type="button">✉️ ارتباط با ما</button>
+</section>
+
+
+
+<main class="workspace section-panel" id="calculatorPanel">
 <aside class="card nav-card">
- <div class="card-heading"><h2>ابزارهای محاسباتی</h2><span class="count">۱۱ مورد</span></div>
+ <div class="card-heading"><h2>ابزارهای محاسباتی</h2><span class="count">۲۵ ابزار · فصل‌بندی‌شده</span></div>
  <input class="search" id="search" type="search" placeholder="جست‌وجوی فرمول یا موضوع...">
  <nav class="nav-list" id="navList">
+ <div class="tool-chapter-heading">فصل اول · الکتریسیتهٔ ساکن <small>ابزارهای ۱ تا ۱۱</small></div>
  <button class="nav-item active" data-id="1"><span class="nav-icon">q</span><span><span class="nav-title">کوانتیده بودن بار</span><span class="nav-sub">بار بنیادی و تعداد بارها</span></span></button>
  <button class="nav-item" data-id="2"><span class="nav-icon">F</span><span><span class="nav-title">نیروی کولن</span><span class="nav-sub">برهم‌کنش دو بار نقطه‌ای</span></span></button>
  <button class="nav-item" data-id="3"><span class="nav-icon">E</span><span><span class="nav-title">میدان از نیرو و بار</span><span class="nav-sub">تعریف میدان الکتریکی</span></span></button>
@@ -48,6 +190,25 @@ body.light .status,body.light .stat{background:#ffffffcc}body.light .card{backgr
  <button class="nav-item" data-id="9"><span class="nav-icon">C₀</span><span><span class="nav-title">ظرفیت خازن تخت</span><span class="nav-sub">مساحت صفحات و فاصله</span></span></button>
  <button class="nav-item" data-id="10"><span class="nav-icon">κ</span><span><span class="nav-title">خازن با دی‌الکتریک</span><span class="nav-sub">ثابت دی‌الکتریک و هندسه خازن</span></span></button>
  <button class="nav-item" data-id="11"><span class="nav-icon">U</span><span><span class="nav-title">انرژی خازن</span><span class="nav-sub">ظرفیت و ولتاژ خازن</span></span></button>
+
+ <div class="tool-chapter-heading">فصل دوم · جریان الکتریکی و مدارهای جریان مستقیم <small>ابزارهای ۱۲ تا ۱۸</small></div>
+ <button class="nav-item" data-id="12"><span class="nav-icon">I</span><span><span class="nav-title">شدت جریان</span><span class="nav-sub">بار عبوری و زمان</span></span></button>
+ <button class="nav-item" data-id="13"><span class="nav-icon">R</span><span><span class="nav-title">قانون اهم</span><span class="nav-sub">ولتاژ، جریان و مقاومت</span></span></button>
+ <button class="nav-item" data-id="14"><span class="nav-icon">ρ</span><span><span class="nav-title">مقاومت رسانا</span><span class="nav-sub">مقاومت ویژه و ابعاد سیم</span></span></button>
+ <button class="nav-item" data-id="15"><span class="nav-icon">Rₛ</span><span><span class="nav-title">مقاومت معادل سری</span><span class="nav-sub">جمع مقاومت‌ها</span></span></button>
+ <button class="nav-item" data-id="16"><span class="nav-icon">Rₚ</span><span><span class="nav-title">مقاومت معادل موازی</span><span class="nav-sub">ترکیب موازی مقاومت‌ها</span></span></button>
+ <button class="nav-item" data-id="17"><span class="nav-icon">P</span><span><span class="nav-title">توان الکتریکی</span><span class="nav-sub">ولتاژ و جریان</span></span></button>
+ <button class="nav-item" data-id="18"><span class="nav-icon">ε</span><span><span class="nav-title">ولتاژ پایانه‌ای منبع</span><span class="nav-sub">نیروی محرکه و مقاومت درونی</span></span></button>
+ <div class="tool-chapter-heading">فصل سوم · مغناطیس <small>ابزارهای ۱۹ تا ۲۱</small></div>
+ <button class="nav-item" data-id="19"><span class="nav-icon">F</span><span><span class="nav-title">نیروی مغناطیسی بر بار</span><span class="nav-sub">بار متحرک در میدان مغناطیسی</span></span></button>
+ <button class="nav-item" data-id="20"><span class="nav-icon">BIL</span><span><span class="nav-title">نیروی مغناطیسی بر سیم</span><span class="nav-sub">سیم حامل جریان</span></span></button>
+ <button class="nav-item" data-id="21"><span class="nav-icon">B</span><span><span class="nav-title">میدان سیم راست بلند</span><span class="nav-sub">جریان و فاصله از سیم</span></span></button>
+ <div class="tool-chapter-heading">القای الکترومغناطیسی <small>تجربی: ادامهٔ فصل سوم · ریاضی: فصل چهارم</small></div>
+ <button class="nav-item" data-id="22"><span class="nav-icon">Φ</span><span><span class="nav-title">شار مغناطیسی</span><span class="nav-sub">میدان، مساحت و زاویه</span></span></button>
+ <button class="nav-item" data-id="23"><span class="nav-icon">ε</span><span><span class="nav-title">قانون فاراده</span><span class="nav-sub">تغییر شار در زمان</span></span></button>
+ <button class="nav-item" data-id="24"><span class="nav-icon">Blv</span><span><span class="nav-title">نیروی محرکه القایی حرکتی</span><span class="nav-sub">میله متحرک در میدان</span></span></button>
+ <div class="tool-chapter-heading track-math">جریان متناوب <small>ویژهٔ رشتهٔ ریاضی‌فیزیک</small></div>
+ <button class="nav-item track-math" data-id="25"><span class="nav-icon">V~</span><span><span class="nav-title">مقدار مؤثر جریان متناوب</span><span class="nav-sub">ولتاژ یا جریان سینوسی</span></span></button>
  </nav>
 </aside>
 <section class="card content">
@@ -65,15 +226,102 @@ body.light .status,body.light .stat{background:#ffffffcc}body.light .card{backgr
  <div class="actions"><button class="btn btn-primary" type="submit">محاسبه نتیجه ←</button><button class="btn btn-ghost" type="reset">پاک کردن مقادیر</button></div></form>
  <div class="error" id="error" role="alert"></div>
  <div class="result" id="result" aria-live="polite"><div class="result-top"><span class="result-label" id="resultLabel">نتیجه محاسبه</span><button class="copy" id="copy" type="button">کپی نتیجه</button></div><div class="result-number" id="resultNumber"></div><div class="result-unit" id="resultUnit"></div><div class="explain" id="explain"></div></div>
+ <section class="solution" id="solution" hidden><h3>راه‌حل مرحله‌به‌مرحله</h3><div id="solutionSteps"></div></section>
  <div class="info"><strong>یادآوری:</strong> ورودی‌ها را با واحد مشخص‌شده وارد کن. در محاسبات از k = 9 × 10⁹ N·m²/C² و e = 1.6 × 10⁻¹⁹ C استفاده می‌شود. این ابزار برای تمرین آموزشی است.</div>
 </section>
 </main>
 <section class="card history"><div class="history-head"><h3>آخرین محاسبات</h3><button class="copy" id="clearHistory" type="button">پاک کردن سابقه</button></div><div class="history-list" id="history"></div></section>
-<footer class="footer"><span>فیزیک‌یار </span><span>Gmail:mohammad.kv2010@gmail.com</span></footer>
+
+<section class="card extra-panel section-panel" id="learnPanel" hidden>
+ <div class="content-head"><div><div class="kicker">LEARN / GRADE 11</div><h2>آموزش فیزیک یازدهم</h2><p>مرور مفاهیم پایه، فرمول‌ها و مثال‌های حل‌شده‌ی الکتریسیته ساکن.</p></div><span class="badge">درس‌نامه</span></div>
+
+ <div class="track-select" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0;padding:14px;background:#0c1729;border:1px solid var(--line);border-radius:14px">
+  <label for="trackSelect" style="font-size:12px;font-weight:700">انتخاب رشته:</label>
+  <select id="trackSelect" style="padding:9px 12px;border-radius:9px;background:#1a2942;color:var(--text);border:1px solid var(--line)">
+   <option value="both">نمایش مباحث مشترک و اختصاصی هر دو رشته</option>
+   <option value="math">ریاضی‌فیزیک</option>
+   <option value="experimental">علوم تجربی</option>
+  </select>
+  <span id="trackNotice" style="font-size:11px;color:var(--muted)">مباحث مشترک به‌همراه بخش‌های ویژه هر رشته نمایش داده می‌شود.</span>
+ </div>
+ <div class="curriculum" id="curriculum">
+  <h3 style="margin:12px 0">نقشه راه کامل کتاب</h3>
+  <div class="chapter-grid">
+   <article class="lesson-card"><span class="lesson-number">فصل ۱ · مشترک</span><h3>الکتریسیتهٔ ساکن</h3><p>بار الکتریکی و پایستگی آن، قانون کولن، میدان الکتریکی، انرژی پتانسیل و پتانسیل الکتریکی، خازن و انرژی ذخیره‌شده.</p></article>
+   <article class="lesson-card"><span class="lesson-number">فصل ۲ · مشترک</span><h3>جریان الکتریکی و مدارهای جریان مستقیم</h3><p>جریان، اختلاف پتانسیل، مقاومت، قانون اهم، مقاومت ویژه، نیروی محرکهٔ الکتریکی، مدارهای سری و موازی و توان الکتریکی.</p></article>
+   <article class="lesson-card"><span class="lesson-number">فصل ۳ · مشترک</span><h3>مغناطیس</h3><p>میدان مغناطیسی، نیروی مغناطیسی وارد بر بار متحرک و سیم حامل جریان، میدان حاصل از جریان و القای مغناطیسی.</p></article>
+   <article class="lesson-card track-math"><span class="lesson-number">فصل ۴ · ریاضی‌فیزیک</span><h3>القای الکترومغناطیسی و جریان متناوب</h3><p>شار مغناطیسی، قانون فاراده و لنز، نیروی محرکهٔ القایی، جریان متناوب و ویژگی‌های مدارهای سادهٔ AC.</p></article>
+   <article class="lesson-card track-experimental"><span class="lesson-number">تطبیق رشته · تجربی</span><h3>القای الکترومغناطیسی</h3><p>مباحث القای الکترومغناطیسی در فصل سوم کتاب تجربی بررسی می‌شود؛ ترتیب و گسترهٔ جزئیات با کتاب همان رشته تطبیق داده شود.</p></article>
+  </div>
+  <h3 style="margin:22px 0 10px">بانک فرمول‌های فیزیک یازدهم</h3>
+  <p style="color:var(--muted);font-size:11px;line-height:2">فرمول‌ها برای مرور آموزشی دسته‌بندی شده‌اند. در هر مسئله، شرایط کاربرد رابطه و یکاها را با متن کتاب و صورت سؤال تطبیق بده.</p>
+  <div class="formula-bank">
+   <article class="lesson-card"><h3>فصل ۱ · الکتریسیتهٔ ساکن</h3><div class="lesson-formula">q = ne</div><div class="lesson-formula">F = k |q₁q₂| / r²</div><div class="lesson-formula">E = F / |q| = k|Q|/r²</div><div class="lesson-formula">U = kq₁q₂/r</div><div class="lesson-formula">V = U/q &nbsp; · &nbsp; ΔV = ΔU/q</div><div class="lesson-formula">C = Q/V &nbsp; · &nbsp; C = ε₀A/d</div><div class="lesson-formula">C = κε₀A/d</div><div class="lesson-formula">U<sub>C</sub> = ½CV² = ½QV = Q²/(2C)</div><p class="lesson-note">نمادها: q و Q بار، e بار بنیادی، r فاصله، E میدان، V پتانسیل، C ظرفیت و κ ثابت دی‌الکتریک.</p></article>
+   <article class="lesson-card"><h3>فصل ۲ · جریان و مدار مستقیم</h3><div class="lesson-formula">I = ΔQ/Δt</div><div class="lesson-formula">V = IR</div><div class="lesson-formula">R = ρL/A</div><div class="lesson-formula">R<sub>s</sub> = R₁ + R₂ + ...</div><div class="lesson-formula">1/R<sub>p</sub> = 1/R₁ + 1/R₂ + ...</div><div class="lesson-formula">P = IV = I²R = V²/R</div><div class="lesson-formula">ε = V<sub>terminal</sub> + Ir</div><p class="lesson-note">نمادها: I جریان، Q بار عبوری، R مقاومت، ρ مقاومت ویژه، L طول، A سطح مقطع، P توان و r مقاومت درونی. رابطهٔ منبع با توجه به قرارداد علامت و حالت مدار به‌کار رود.</p></article>
+   <article class="lesson-card"><h3>فصل ۳ · مغناطیس</h3><div class="lesson-formula">F = |q|vB sinθ</div><div class="lesson-formula">F = BIL sinθ</div><div class="lesson-formula">B = μ₀I/(2πr)  (سیم راست بلند)</div><div class="lesson-formula">B = μ₀NI/(2R)  (مرکز پیچهٔ دایره‌ای)</div><div class="lesson-formula">B = μ₀nI  (داخل سیملولهٔ بلند)</div><p class="lesson-note">زاویه θ بین جهت سرعت و میدان، یا جهت جریان و میدان است. جهت نیرو با قاعدهٔ دست راست تعیین می‌شود.</p></article>
+   <article class="lesson-card track-math"><h3>فصل ۴ · القا و جریان متناوب · ریاضی</h3><div class="lesson-formula">Φ = BA cosθ</div><div class="lesson-formula">|ε| = N |ΔΦ/Δt|</div><div class="lesson-formula">ε = Blv  (حالت عمود)</div><div class="lesson-formula">V<sub>rms</sub> = V<sub>max</sub>/√2</div><div class="lesson-formula">I<sub>rms</sub> = I<sub>max</sub>/√2</div><div class="lesson-formula">P<sub>avg</sub> = V<sub>rms</sub>I<sub>rms</sub></div><p class="lesson-note">شار Φ، تعداد دور N، و زاویهٔ θ بین میدان و بردار عمود بر سطح است. رابطه‌های جریان متناوب برای کمیت‌های سینوسی‌اند.</p></article>
+   <article class="lesson-card track-experimental"><h3>القای الکترومغناطیسی · تجربی</h3><div class="lesson-formula">Φ = BA cosθ</div><div class="lesson-formula">|ε| = N |ΔΦ/Δt|</div><div class="lesson-formula">ε = Blv  (میلهٔ متحرک در حالت عمود)</div><p class="lesson-note">تغییر شار مغناطیسی می‌تواند نیروی محرکهٔ القایی ایجاد کند؛ جهت جریان القایی با قانون لنز تعیین می‌شود.</p></article>
+  </div>
+  <h3 style="margin:22px 0 10px">روش مطالعهٔ هر فصل</h3>
+  <ol style="color:var(--muted);font-size:12px;line-height:2.2;padding-right:22px">
+   <li>ابتدا تعریف‌ها، مفهوم‌ها و شکل‌های کتاب را بخوان.</li><li>فرمول را همراه با معنی نمادها و یکاها یاد بگیر.</li><li>یک مثال تشریحی را بدون نگاه‌کردن دوباره حل کن.</li><li>سپس تست‌های همان فصل را بزن و علت گزینه‌های نادرست را بررسی کن.</li>
+  </ol>
+ </div>
+
+ <div class="lesson-grid">
+  <article class="lesson-card"><span class="lesson-number">درس ۰۱</span><h3>بار الکتریکی و کوانتیده بودن</h3><p>بار الکتریکی ویژگی‌ای از ماده است. بار هر جسم از مضرب صحیحی از بار بنیادی تشکیل می‌شود.</p><div class="lesson-formula">q = n e</div><p class="lesson-note">بار بنیادی: e = 1.6 × 10⁻¹⁹ C</p></article>
+  <article class="lesson-card"><span class="lesson-number">درس ۰۲</span><h3>پایستگی بار الکتریکی</h3><p>در یک سامانه‌ی منزوی، مجموع جبری بار الکتریکی ثابت می‌ماند؛ بار ایجاد یا نابود نمی‌شود و فقط جابه‌جا می‌شود.</p><div class="lesson-formula">Σq قبل = Σq بعد</div><p class="lesson-note">در مسائل، علامت بارها را با دقت در جمع جبری وارد کن.</p></article>
+  <article class="lesson-card"><span class="lesson-number">درس ۰۳</span><h3>قانون کولن</h3><p>اندازه‌ی نیروی الکتریکی بین دو بار نقطه‌ای با حاصل‌ضرب اندازه‌ی بارها متناسب و با مربع فاصله نسبت وارون دارد.</p><div class="lesson-formula">F = k |q₁q₂| / r²</div><p class="lesson-note">بارهای هم‌نام یکدیگر را دفع و بارهای ناهم‌نام یکدیگر را جذب می‌کنند.</p></article>
+  <article class="lesson-card"><span class="lesson-number">درس ۰۴</span><h3>میدان الکتریکی</h3><p>میدان الکتریکی، نیروی وارد بر واحد بار آزمون مثبت در یک نقطه است.</p><div class="lesson-formula">E = F / |q|</div><p class="lesson-note">واحد میدان: N/C یا V/m</p></article>
+  <article class="lesson-card"><span class="lesson-number">درس ۰۵</span><h3>پتانسیل و انرژی پتانسیل</h3><p>انرژی پتانسیل دو بار نقطه‌ای به علامت بارها و فاصله‌ی آن‌ها وابسته است.</p><div class="lesson-formula">U = k q₁q₂ / r</div><p class="lesson-note">اختلاف پتانسیل: ΔV = ΔU / q</p></article>
+ </div>
+ <div class="study-tip"><b>نکته‌ی مطالعه:</b> پیش از جایگذاری در فرمول، همه‌ی کمیت‌ها را به یکای SI تبدیل کن و فاصله را بر حسب متر بنویس.</div>
+</section>
+
+<section class="card extra-panel section-panel" id="toolsPanel" hidden>
+ <div class="content-head"><div><div class="kicker">UNIT CONVERTER</div><h2>تبدیل یکاهای پرکاربرد</h2><p>مقدار را وارد کن و نوع تبدیل را انتخاب کن.</p></div><span class="badge">ابزار کمکی</span></div>
+ <div class="converter">
+  <div class="field"><label for="convertValue">مقدار</label><input id="convertValue" type="text" inputmode="decimal" placeholder="مثلاً ۲٫۵"></div>
+  <div class="field"><label for="convertType">نوع تبدیل</label><select id="convertType"><option value="cm-m">سانتی‌متر به متر</option><option value="m-cm">متر به سانتی‌متر</option><option value="mm-m">میلی‌متر به متر</option><option value="km-m">کیلومتر به متر</option><option value="uC-C">میکروکولن به کولن</option><option value="nC-C">ناناکولن به کولن</option><option value="mC-C">میلی‌کولن به کولن</option><option value="uF-F">میکروفاراد به فاراد</option><option value="nF-F">نانوفاراد به فاراد</option><option value="mF-F">میلی‌فاراد به فاراد</option></select></div>
+  <button class="btn btn-primary" id="convertBtn" type="button">تبدیل کن</button>
+  <div class="converter-result" id="convertResult" aria-live="polite">نتیجه‌ی تبدیل اینجا نمایش داده می‌شود.</div>
+ </div>
+</section>
+
+<section class="card extra-panel section-panel" id="contactPanel" hidden>
+ <div class="content-head">
+  <div><div class="kicker">CONTACT / PHYSICYAR</div><h2>ارتباط با ما</h2>
+  <p>پیشنهادها، انتقادها و سوال‌های خودت دربارهٔ فیزیک‌یار را از طریق ایمیل با ما در میان بگذار.</p></div>
+  <span class="badge">پشتیبانی</span>
+ </div>
+ <div class="contact-card">
+  <div class="contact-icon" aria-hidden="true">✉</div>
+  <div class="contact-copy">
+   <h3>ایمیل پشتیبانی</h3>
+   <p>برای ارتباط با تیم فیزیک‌یار، روی نشانی زیر بزن.</p>
+   <a class="contact-email" href="mailto:cooperx404.github@gmail.com">cooperx404.github@gmail.com</a>
+  </div>
+  <a class="btn btn-primary contact-button" href="mailto:cooperx404.github@gmail.com">ارسال ایمیل ←</a>
+ </div>
+</section>
+
+<footer class="footer"><span>فیزیک‌یار</span><span>ابزار کمک‌آموزشی فیزیک یازدهم</span></footer>
 </div>
 <script>
 "use strict";
 const E_CHARGE=1.6e-19,K=9e9,EPSILON_0=8.85e-12;
+
+const trackSelect=document.getElementById("trackSelect");
+if(trackSelect){
+ const applyTrack=()=>{
+  const t=trackSelect.value;
+  document.querySelectorAll(".track-math").forEach(el=>el.hidden=t==="experimental");
+  document.querySelectorAll(".track-experimental").forEach(el=>el.hidden=t==="math");
+  document.getElementById("trackNotice").textContent=t==="math"?"مباحث مشترک به‌همراه فصل چهارم ویژهٔ ریاضی‌فیزیک نمایش داده می‌شود.":t==="experimental"?"مباحث مشترک و مباحث القای الکترومغناطیسی متناسب با تجربی نمایش داده می‌شود.":"مباحث مشترک و بخش‌های ویژهٔ هر دو رشته نمایش داده می‌شود.";
+ };
+ trackSelect.addEventListener("change",applyTrack);applyTrack();
+}
+
 const items={
 1:{title:"کوانتیده بودن بار",desc:"مقدار بار الکتریکی با تعداد صحیحی از بارهای بنیادی تعیین می‌شود.",formula:"q = n × e",note:"e = 1.6 × 10⁻¹⁹ C",fields:[["n","تعداد بارهای بنیادی","بدون واحد","مثلاً 3","integer"]],run:v=>[v.n*E_CHARGE,"C","بار الکتریکی","بار کل از حاصل‌ضرب تعداد بارهای بنیادی در بار بنیادی به دست می‌آید."]},
 2:{title:"نیروی کولن",desc:"اندازه نیروی الکتریکی بین دو بار نقطه‌ای را در فاصله مشخص محاسبه کن.",formula:"F = k × |q₁q₂| / r²",note:"k = 9 × 10⁹ N·m²/C²",fields:[["q1","بار الکتریکی اول","C","مثلاً 2 × 10⁻⁶"],["q2","بار الکتریکی دوم","C","مثلاً 3 × 10⁻⁶"],["r","فاصله دو بار","m","مثلاً 0.2"]],run:v=>{if(v.r<=0)throw"فاصله باید بزرگ‌تر از صفر باشد.";return[K*Math.abs(v.q1*v.q2)/v.r**2,"N","اندازه نیروی کولن","در این رابطه اندازه نیرو محاسبه می‌شود؛ علامت بارها در تعیین جاذبه یا دافعه بودن اثر دارد."]}},
@@ -86,6 +334,21 @@ const items={
 ,9:{title:"ظرفیت خازن تخت",desc:"ظرفیت خازن تخت را با مساحت صفحات و فاصله آن‌ها محاسبه کن.",formula:"C = ε₀ × A / d",note:"ε₀ = 8.85 × 10⁻¹² F/m",fields:[["A","مساحت صفحات","m²","مثلاً 0.02"],["d","فاصله صفحات","m","مثلاً 0.001"]],run:v=>{if(v.A<=0||v.d<=0)throw"مساحت و فاصله باید بزرگ‌تر از صفر باشند.";return[EPSILON_0*v.A/v.d,"F","ظرفیت خازن تخت","این رابطه برای خازن تخت در خلأ یا تقریباً هوا نوشته شده است."]}}
 ,10:{title:"ظرفیت خازن با دی‌الکتریک",desc:"ظرفیت خازن تخت را با در نظر گرفتن ثابت دی‌الکتریک محاسبه کن.",formula:"C = κ × ε₀ × A / d",note:"κ: ثابت دی‌الکتریک (بدون واحد)",fields:[["A","مساحت صفحات","m²","مثلاً 0.02"],["d","فاصله صفحات","m","مثلاً 0.001"],["dielectric","ثابت دی‌الکتریک","بدون واحد","مثلاً 4"]],run:v=>{if(v.A<=0||v.d<=0||v.dielectric<=0)throw"همه مقادیر باید بزرگ‌تر از صفر باشند.";return[v.dielectric*EPSILON_0*v.A/v.d,"F","ظرفیت خازن با دی‌الکتریک","وجود دی‌الکتریک ظرفیت خازن را به اندازه ثابت دی‌الکتریک افزایش می‌دهد."]}}
 ,11:{title:"انرژی خازن",desc:"انرژی ذخیره‌شده در خازن را با ظرفیت و ولتاژ آن محاسبه کن.",formula:"U = ½ × C × V²",note:"واحد انرژی: J (ژول)",fields:[["C","ظرفیت خازن","F","مثلاً 10⁻⁶"],["V","ولتاژ خازن","V","مثلاً 12"]],run:v=>{if(v.C<0)throw"ظرفیت خازن نمی‌تواند منفی باشد.";return[0.5*v.C*v.V**2,"J","انرژی ذخیره‌شده در خازن","انرژی خازن برابر نصف حاصل‌ضرب ظرفیت در مجذور ولتاژ است."]}}
+,12:{title:"شدت جریان الکتریکی",desc:"شدت جریان متوسط را از بار عبوری و بازه زمانی حساب کن.",formula:"I = ΔQ / Δt",note:"I بر حسب آمپر، Q بر حسب کولن و t بر حسب ثانیه",fields:[["Q","بار عبوری","C","مثلاً 12"],["t","زمان","s","مثلاً 3"]],run:v=>{if(v.t<=0)throw"زمان باید بزرگ‌تر از صفر باشد.";return[v.Q/v.t,"A","شدت جریان","شدت جریان برابر بار عبوری از مقطع رسانا در واحد زمان است."]}}
+,13:{title:"قانون اهم",desc:"جریان، ولتاژ یا مقاومت را با دو کمیت دیگر محاسبه کن؛ این ابزار مقاومت را به دست می‌آورد.",formula:"R = V / I",note:"واحد مقاومت: اهم (Ω)",fields:[["V","اختلاف پتانسیل","V","مثلاً 12"],["I","شدت جریان","A","مثلاً 2"]],run:v=>{if(v.I===0)throw"جریان نمی‌تواند صفر باشد.";return[v.V/v.I,"Ω","مقاومت الکتریکی","این رابطه برای رسانای اهمی در شرایط فیزیکی ثابت به‌کار می‌رود."]}}
+,14:{title:"مقاومت یک رسانا",desc:"مقاومت سیم را از مقاومت ویژه، طول و سطح مقطع محاسبه کن.",formula:"R = ρL / A",note:"ρ بر حسب Ω·m، طول بر حسب m و مساحت بر حسب m²",fields:[["rho","مقاومت ویژه","Ω·m","مثلاً 1.7×10^-8"],["L","طول رسانا","m","مثلاً 2"],["A","مساحت مقطع","m²","مثلاً 1×10^-6"]],run:v=>{if(v.rho<0||v.L<=0||v.A<=0)throw"مقاومت ویژه نمی‌تواند منفی و طول و مساحت باید مثبت باشند.";return[v.rho*v.L/v.A,"Ω","مقاومت رسانا","با افزایش طول مقاومت بیشتر و با افزایش سطح مقطع کمتر می‌شود."]}}
+,15:{title:"مقاومت معادل سری",desc:"مقاومت معادل چند مقاومت متصل به صورت سری را حساب کن.",formula:"Rₛ = R₁ + R₂ + R₃",note:"همه مقاومت‌ها بر حسب اهم وارد شوند.",fields:[["R1","مقاومت اول","Ω","مثلاً 4"],["R2","مقاومت دوم","Ω","مثلاً 6"],["R3","مقاومت سوم (در صورت نبود صفر)","Ω","مثلاً 0"]],run:v=>{if(v.R1<0||v.R2<0||v.R3<0)throw"مقاومت منفی وارد نکن.";return[v.R1+v.R2+v.R3,"Ω","مقاومت معادل سری","در اتصال سری، مقاومت‌ها با هم جمع می‌شوند."]}}
+,16:{title:"مقاومت معادل موازی",desc:"مقاومت معادل سه شاخه موازی را محاسبه کن؛ برای شاخه استفاده‌نشده صفر وارد کن.",formula:"1/Rₚ = 1/R₁ + 1/R₂ + 1/R₃",note:"مقاومت‌ها بر حسب اهم",fields:[["R1","مقاومت اول","Ω","مثلاً 6"],["R2","مقاومت دوم","Ω","مثلاً 3"],["R3","مقاومت سوم (در صورت نبود صفر)","Ω","مثلاً 0"]],run:v=>{const a=[v.R1,v.R2,v.R3].filter(x=>x>0);if(a.length<1||[v.R1,v.R2,v.R3].some(x=>x<0))throw"حداقل یک مقاومت مثبت لازم است و مقاومت منفی مجاز نیست.";return[1/a.reduce((s,x)=>s+1/x,0),"Ω","مقاومت معادل موازی","معکوس مقاومت معادل برابر مجموع معکوس مقاومت شاخه‌هاست."]}}
+,17:{title:"توان الکتریکی",desc:"توان مصرفی وسیله را از ولتاژ و جریان حساب کن.",formula:"P = VI",note:"واحد توان: وات (W)",fields:[["V","ولتاژ","V","مثلاً 220"],["I","جریان","A","مثلاً 0.5"]],run:v=>[v.V*v.I,"W","توان الکتریکی","در این ابزار توان با حاصل‌ضرب ولتاژ و جریان محاسبه می‌شود."]}
+,18:{title:"ولتاژ پایانه‌ای منبع",desc:"ولتاژ دو سر منبع در حال تأمین جریان را با مقاومت درونی محاسبه کن.",formula:"V = ε − Ir",note:"برای منبعی که جریان به مدار می‌دهد.",fields:[["emf","نیروی محرکه الکتریکی","V","مثلاً 12"],["I","جریان","A","مثلاً 1"],["r","مقاومت درونی","Ω","مثلاً 0.5"]],run:v=>{if(v.r<0)throw"مقاومت درونی نمی‌تواند منفی باشد.";return[v.emf-v.I*v.r,"V","ولتاژ پایانه‌ای","برای حالت دشارژ منبع از V=ε−Ir استفاده شده است."]}}
+,19:{title:"نیروی مغناطیسی بر بار متحرک",desc:"اندازه نیروی مغناطیسی وارد بر بار متحرک را حساب کن.",formula:"F = |q|vB sin(θ)",note:"زاویه بین سرعت و میدان مغناطیسی؛ درجه",fields:[["q","بار الکتریکی","C","مثلاً 2×10^-6"],["v","سرعت","m/s","مثلاً 300"],["B","میدان مغناطیسی","T","مثلاً 0.2"],["theta","زاویه","degree","مثلاً 90"]],run:v=>[Math.abs(v.q)*v.v*v.B*Math.abs(Math.sin(v.theta*Math.PI/180)),"N","اندازه نیروی مغناطیسی","نیرو به زاویه بین سرعت و میدان وابسته است؛ جهت نیرو در این محاسبه تعیین نمی‌شود."]}
+,20:{title:"نیروی مغناطیسی بر سیم",desc:"اندازه نیروی وارد بر سیم حامل جریان در میدان مغناطیسی را حساب کن.",formula:"F = BIL sin(θ)",note:"θ زاویه بین جهت جریان و میدان است.",fields:[["B","میدان مغناطیسی","T","مثلاً 0.3"],["I","جریان","A","مثلاً 2"],["L","طول سیم در میدان","m","مثلاً 0.5"],["theta","زاویه","degree","مثلاً 90"]],run:v=>[v.B*v.I*v.L*Math.abs(Math.sin(v.theta*Math.PI/180)),"N","اندازه نیروی مغناطیسی بر سیم","در حالت عمود بودن سیم و میدان، نیرو بیشینه است."]}
+,21:{title:"میدان مغناطیسی سیم راست بلند",desc:"اندازه میدان مغناطیسی در فاصله‌ای از سیم راست بلند را محاسبه کن.",formula:"B = μ₀I / (2πr)",note:"μ₀ = 4π × 10⁻⁷ T·m/A",fields:[["I","جریان سیم","A","مثلاً 5"],["r","فاصله از سیم","m","مثلاً 0.02"]],run:v=>{if(v.r<=0)throw"فاصله باید مثبت باشد.";return[2e-7*v.I/v.r,"T","میدان مغناطیسی","رابطه برای سیم راست بلند در محیط هوا یا خلأ است."]}}
+,22:{title:"شار مغناطیسی",desc:"شار مغناطیسی یکنواخت عبوری از سطح تخت را حساب کن.",formula:"Φ = BA cos(θ)",note:"θ زاویه بین میدان و خط عمود بر سطح است.",fields:[["B","میدان مغناطیسی","T","مثلاً 0.2"],["A","مساحت سطح","m²","مثلاً 0.04"],["theta","زاویه با خط عمود","degree","مثلاً 30"]],run:v=>[v.B*v.A*Math.cos(v.theta*Math.PI/180),"Wb","شار مغناطیسی","شار با کسینوس زاویه بین میدان و بردار عمود بر سطح متناسب است."]}
+,23:{title:"نیروی محرکه القایی (قانون فاراده)",desc:"اندازه نیروی محرکه القایی متوسط را از تغییر شار در زمان به دست بیاور.",formula:"|ε| = N × |ΔΦ| / Δt",note:"N تعداد دور، شار بر حسب وبر و زمان بر حسب ثانیه",fields:[["N","تعداد دور سیم‌پیچ","turn","مثلاً 100"],["deltaPhi","تغییر شار هر دور","Wb","مثلاً 0.02"],["t","زمان تغییر شار","s","مثلاً 0.1"]],run:v=>{if(v.N<=0||v.t<=0)throw"تعداد دور و زمان باید مثبت باشند.";return[v.N*Math.abs(v.deltaPhi)/v.t,"V","اندازه نیروی محرکه القایی","این رابطه مقدار متوسط را می‌دهد؛ جهت جریان با قانون لنز تعیین می‌شود."]}}
+,24:{title:"نیروی محرکه القایی حرکتی",desc:"نیروی محرکه القایی در میله‌ای که عمود بر میدان حرکت می‌کند را حساب کن.",formula:"ε = B L v",note:"حالت حرکت عمود بر میدان و طول میله",fields:[["B","میدان مغناطیسی","T","مثلاً 0.5"],["L","طول میله","m","مثلاً 0.2"],["v","سرعت میله","m/s","مثلاً 3"]],run:v=>[v.B*v.L*v.v,"V","نیروی محرکه القایی حرکتی","رابطه برای آرایش ساده‌ای است که حرکت، میدان و میله بر یکدیگر عمودند."]}
+,25:{title:"مقدار مؤثر جریان یا ولتاژ متناوب",desc:"مقدار مؤثر یک کمیت سینوسی را از مقدار بیشینه محاسبه کن.",formula:"Xᵣₘₛ = Xmax / √2",note:"برای ولتاژ یا جریان سینوسی",fields:[["max","مقدار بیشینه (V یا A)","V یا A","مثلاً 311"]],run:v=>[v.max/Math.sqrt(2),"همان یکای ورودی","مقدار مؤثر","مقدار مؤثر کمیت سینوسی برابر مقدار بیشینه تقسیم بر ریشه دوم دو است."]}
+
 };
 const $=id=>document.getElementById(id);
 let current=1,activeInput=null,history=[];
@@ -118,7 +381,7 @@ function render(id){
  const c=items[id];$("index").textContent=String(id).padStart(2,"0");$("title").textContent=c.title;$("description").textContent=c.desc;$("formula").textContent=c.formula;$("formulaNote").textContent=c.note;
  $("navList").querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",Number(b.dataset.id)===id));
  $("fields").innerHTML=c.fields.map(([key,label,unit,placeholder,type])=>`<div class="field"><label for="${key}">${label}<span class="unit">(${unit})</span></label><input id="${key}" name="${key}" type="text" inputmode="none" autocomplete="off" spellcheck="false" placeholder="${placeholder}" required></div>`).join("");
- $("result").classList.remove("show");$("error").style.display="none";
+ $("result").classList.remove("show");$("solution").hidden=true;$("error").style.display="none";
 }
 function saveHistory(){
  try{localStorage.setItem("physicyar-history",JSON.stringify(history));}catch(e){}
@@ -142,10 +405,10 @@ $("calcForm").addEventListener("submit",e=>{
   }
   const [value,unit,label,explain]=c.run(v);
   if(!Number.isFinite(value))throw"نتیجه محاسبه خارج از محدوده قابل نمایش است.";
-  $("resultLabel").textContent=label;$("resultNumber").innerHTML=formatScientific(value);$("resultUnit").textContent=unit;$("explain").textContent=explain;$("result").classList.add("show");addHistory(c.title,value,unit);
- }catch(err){$("error").textContent=err instanceof Error?err.message:String(err);$("error").style.display="block";$("result").classList.remove("show");}
+  $("resultLabel").textContent=label;$("resultNumber").innerHTML=formatScientific(value);$("resultUnit").textContent=unit;$("explain").textContent=explain;$("result").classList.add("show");buildSolution(current,v,value,unit);addHistory(c.title,value,unit);
+ }catch(err){$("error").textContent=err instanceof Error?err.message:String(err);$("error").style.display="block";$("result").classList.remove("show");$("solution").hidden=true;}
 });
-$("calcForm").addEventListener("reset",()=>{activeInput=null;$("keyTarget").textContent="ابتدا یک کادر ورودی را انتخاب کن";$("result").classList.remove("show");$("error").style.display="none";});
+$("calcForm").addEventListener("reset",()=>{activeInput=null;$("keyTarget").textContent="ابتدا یک کادر ورودی را انتخاب کن";$("result").classList.remove("show");$("solution").hidden=true;$("error").style.display="none";});
 $("copy").addEventListener("click",async()=>{
  const text=$("resultNumber").textContent+" "+$("resultUnit").textContent;
  try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(text);else{const t=document.createElement("textarea");t.value=text;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();}$("copy").textContent="کپی شد ✓";}
@@ -153,7 +416,7 @@ $("copy").addEventListener("click",async()=>{
  setTimeout(()=>$("copy").textContent="کپی نتیجه",1500);
 });
 $("clearHistory").addEventListener("click",()=>{history=[];saveHistory();drawHistory();});
-$("fields").addEventListener("focusin",e=>{if(e.target.matches("input")){activeInput=e.target;$("keyTarget").textContent="ورودی فعال: "+(e.target.name||"عدد");}});
+$("fields").addEventListener("focusin",e=>{if(e.target.matches("input")){activeInput=e.target;$("keyTarget").textContent=(document.documentElement.lang==="en"?"Active input: ":"ورودی فعال: ")+(e.target.name||"number");}});
 $("keypad").addEventListener("pointerdown",e=>{if(e.target.closest("button"))e.preventDefault();});
 $("keypad").addEventListener("click",e=>{
  const b=e.target.closest("[data-key]");if(!b)return;
@@ -165,12 +428,145 @@ $("keypad").addEventListener("click",e=>{
  else{const insert=key==="×10^"?"×10^":key;value=value.slice(0,start)+insert+value.slice(end);next=start+insert.length;}
  el.value=value;el.focus();el.setSelectionRange(next,next);
 });
+
+function buildSolution(id,v,value,unit){
+ const c=items[id];
+ const expressions={
+  1:`${v.n} × 1.6×10⁻¹⁹`,
+  2:`9×10⁹ × |${v.q1} × ${v.q2}| ÷ (${v.r})²`,
+  3:`|${v.F}| ÷ |${v.q}|`,
+  4:`9×10⁹ × |${v.q}| ÷ (${v.r})²`,
+  5:`9×10⁹ × (${v.q1}) × (${v.q2}) ÷ ${v.r}`,
+  6:`${v.deltaU} ÷ (${v.q})`,
+  7:`|${v.v}| ÷ ${v.d}`,
+  8:`|${v.Q}| ÷ |${v.V}|`,
+  9:`8.85×10⁻¹² × ${v.A} ÷ ${v.d}`,
+  10:`${v.dielectric} × 8.85×10⁻¹² × ${v.A} ÷ ${v.d}`,
+  11:`½ × ${v.C} × (${v.V})²`
+ };
+ const rows=[
+  ["گام ۱: داده‌های مسئله",c.fields.map(([key,label,u])=>`${label}: ${v[key]} ${u}`).join(" ؛ ")],
+  ["گام ۲: فرمول",c.formula],
+  ["گام ۳: جایگذاری",expressions[id]],
+  ["گام ۴: نتیجه",`${formatPlain(value)} ${unit}`]
+ ];
+ const target=$("solutionSteps");target.replaceChildren();
+ rows.forEach(([title,body])=>{const row=document.createElement("div");row.className="solution-step";const b=document.createElement("b");b.textContent=title;const text=document.createElement("div");text.className="solution-math";text.textContent=body;row.append(b,text);target.append(row);});
+ $("solution").hidden=false;
+}
+function formatPlain(n){return Number(n.toPrecision(7)).toString();}
+function setSection(name){
+ document.querySelectorAll(".section-panel").forEach(p=>p.hidden=p.id!==({calculator:"calculatorPanel",learn:"learnPanel",tools:"toolsPanel",contact:"contactPanel"}[name]));
+ document.querySelectorAll(".section-tab").forEach(b=>b.classList.toggle("active",b.dataset.section===name));
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelector(".section-switch").addEventListener("click",e=>{const b=e.target.closest("[data-section]");if(b)setSection(b.dataset.section);});
+const conversions={"cm-m":["سانتی‌متر","متر",0.01],"m-cm":["متر","سانتی‌متر",100],"mm-m":["میلی‌متر","متر",0.001],"km-m":["کیلومتر","متر",1000],"uC-C":["میکروکولن","کولن",1e-6],"nC-C":["ناناکولن","کولن",1e-9],"mC-C":["میلی‌کولن","کولن",1e-3],"uF-F":["میکروفاراد","فاراد",1e-6],"nF-F":["نانوفاراد","فاراد",1e-9],"mF-F":["میلی‌فاراد","فاراد",1e-3]};
+$("convertBtn").addEventListener("click",()=>{try{const n=parseScientificInput($("convertValue").value);const [from,to,factor]=conversions[$("convertType").value];$("convertResult").textContent=`${formatPlain(n)} ${from} = ${formatPlain(n*factor)} ${to}`;}catch(e){$("convertResult").textContent="لطفاً یک عدد معتبر وارد کن.";}});
+
 const themeToggle=$("themeToggle");
 function applyTheme(theme){document.body.classList.toggle("light",theme==="light");themeToggle.textContent=theme==="light"?"🌙 حالت شب":"☀️ حالت روز";try{localStorage.setItem("physicyar-theme",theme);}catch(e){}}
 let savedTheme="dark";try{savedTheme=localStorage.getItem("physicyar-theme")||"dark";}catch(e){}
 applyTheme(savedTheme);themeToggle.addEventListener("click",()=>applyTheme(document.body.classList.contains("light")?"dark":"light"));
 try{const stored=JSON.parse(localStorage.getItem("physicyar-history")||"[]");if(Array.isArray(stored))history=stored.filter(h=>h&&typeof h.name==="string"&&Number.isFinite(h.value)&&typeof h.unit==="string").slice(0,5);}catch(e){history=[];}
-drawHistory();render(1);
+drawHistory();render(1);setSection("calculator");
 </script>
+\n<script id="bilingual-layer">
+(()=>{
+const $=id=>document.getElementById(id);
+let lang='fa';
+const T={
+'فیزیک‌یار':'PhysicYar','ماشین‌حساب هوشمند فیزیک یازدهم':'Grade 11 Physics Toolkit','☀️ حالت روز':'☀️ Light mode','🌙 حالت شب':'🌙 Dark mode','آماده محاسبه':'Ready to calculate',
+'مفاهیم فیزیک را ':'Explore physics concepts and ','ساده‌تر':'calculate more easily',' محاسبه کن.':' .','کمیت‌ها را وارد کن، محاسبه را انجام بده و نتیجه را همراه با نماد علمی استاندارد ببین.':'Enter the values, calculate, and view your result in standard scientific notation.',
+'۱۱ محاسبه فعال':'25 calculators','واحدهای استاندارد':'SI units','نمایش علمی':'Scientific notation',
+'بخش‌های سایت':'Site sections','🧮 ماشین‌حساب':'🧮 Calculator','📘 آموزش':'📘 Learn','🔁 تبدیل واحد':'🔁 Unit converter','✉️ ارتباط با ما':'✉️ Contact us',
+'ابزارهای محاسباتی':'Calculation tools','۲۵ ابزار · فصل‌بندی‌شده':'25 tools · by chapter','جست‌وجوی فرمول یا موضوع...':'Search formulas or topics...','فصل اول · الکتریسیتهٔ ساکن':'Chapter 1 · Electrostatics','ابزارهای ۱ تا ۱۱':'Tools 1–11','فصل دوم · جریان الکتریکی و مدارهای جریان مستقیم':'Chapter 2 · Electric current and DC circuits','ابزارهای ۱۲ تا ۱۸':'Tools 12–18','فصل سوم · مغناطیس':'Chapter 3 · Magnetism','ابزارهای ۱۹ تا ۲۱':'Tools 19–21','القای الکترومغناطیسی':'Electromagnetic induction','تجربی: ادامهٔ فصل سوم · ریاضی: فصل چهارم':'Experimental: end of Chapter 3 · Math: Chapter 4','جریان متناوب':'Alternating current','ویژهٔ رشتهٔ ریاضی‌فیزیک':'For the Mathematics track',
+'محاسبه دقیق':'Accurate calculation','فرمول مورد استفاده':'Formula','مقادیر مسئله را وارد کن':'Enter the problem values','ورودی توان‌دار پذیرفته می‌شود: 10^6 ، 2.5×10^-3 ، 3e8 و ۲٫۵ × ۱۰⁻³':'Scientific notation accepted: 10^6, 2.5×10^-3, 3e8','صفحه‌کلید علمی':'Scientific keypad','ابتدا یک کادر ورودی را انتخاب کن':'Select an input field first','⌫ حذف':'⌫ Backspace','پاک‌کردن':'Clear','توان ^':'Power ^','بستن':'Close','محاسبه نتیجه ←':'Calculate →','پاک کردن مقادیر':'Clear values','نتیجه محاسبه':'Calculation result','کپی نتیجه':'Copy result','کپی شد ✓':'Copied ✓','کپی در دسترس نیست':'Copy unavailable','راه‌حل مرحله‌به‌مرحله':'Step-by-step solution','یادآوری:':'Note:','ورودی‌ها را با واحد مشخص‌شده وارد کن. در محاسبات از k = 9 × 10⁹ N·m²/C² و e = 1.6 × 10⁻¹⁹ C استفاده می‌شود. این ابزار برای تمرین آموزشی است.':'Enter values using the specified units. Calculations use k = 9 × 10⁹ N·m²/C² and e = 1.6 × 10⁻¹⁹ C. This tool is for educational practice.','آخرین محاسبات':'Recent calculations','پاک کردن سابقه':'Clear history','هنوز محاسبه‌ای انجام نشده است.':'No calculations yet.',
+'آموزش فیزیک یازدهم':'Grade 11 Physics','مرور مفاهیم پایه، فرمول‌ها و مثال‌های حل‌شده‌ی الکتریسیته ساکن.':'Review core concepts, formulas, and solved electrostatics examples.','درس‌نامه':'Lessons','انتخاب رشته:':'Select track:','نمایش مباحث مشترک و اختصاصی هر دو رشته':'Show shared and track-specific topics','ریاضی‌فیزیک':'Mathematics and Physics','علوم تجربی':'Experimental Sciences','مباحث مشترک به‌همراه بخش‌های ویژه هر رشته نمایش داده می‌شود.':'Shared topics and track-specific sections are displayed.','مباحث مشترک به‌همراه فصل چهارم ویژهٔ ریاضی‌فیزیک نمایش داده می‌شود.':'Shared topics plus the Mathematics track’s Chapter 4 are displayed.','مباحث مشترک و مباحث القای الکترومغناطیسی متناسب با تجربی نمایش داده می‌شود.':'Shared topics and the electromagnetic induction content for Experimental Sciences are displayed.','نقشه راه کامل کتاب':'Complete textbook roadmap','بانک فرمول‌های فیزیک یازدهم':'Grade 11 physics formula bank','فرمول‌ها برای مرور آموزشی دسته‌بندی شده‌اند. در هر مسئله، شرایط کاربرد رابطه و یکاها را با متن کتاب و صورت سؤال تطبیق بده.':'Formulas are grouped for review. Check each formula’s conditions and units against your textbook and the problem statement.','روش مطالعهٔ هر فصل':'How to study each chapter','ابتدا تعریف‌ها، مفهوم‌ها و شکل‌های کتاب را بخوان.':'Read the textbook definitions, concepts, and diagrams first.','فرمول را همراه با معنی نمادها و یکاها یاد بگیر.':'Learn each formula along with its symbols and units.','یک مثال تشریحی را بدون نگاه‌کردن دوباره حل کن.':'Solve a worked example again without looking at the solution.','سپس تست‌های همان فصل را بزن و علت گزینه‌های نادرست را بررسی کن.':'Then answer practice questions and review why incorrect options are wrong.','نکته‌ی مطالعه:':'Study tip:','پیش از جایگذاری در فرمول، همه‌ی کمیت‌ها را به یکای SI تبدیل کن و فاصله را بر حسب متر بنویس.':'Convert all quantities to SI units before substituting into a formula, and express distance in meters.',
+'تبدیل یکاهای پرکاربرد':'Common unit conversions','مقدار را وارد کن و نوع تبدیل را انتخاب کن.':'Enter a value and choose a conversion.','ابزار کمکی':'Utility','مقدار':'Value','نوع تبدیل':'Conversion type','تبدیل کن':'Convert','نتیجه‌ی تبدیل اینجا نمایش داده می‌شود.':'The conversion result will appear here.','ارتباط با ما':'Contact us','پیشنهادها، انتقادها و سوال‌های خودت دربارهٔ فیزیک‌یار را از طریق ایمیل با ما در میان بگذار.':'Send your feedback, suggestions, and questions about PhysicYar by email.','پشتیبانی':'Support','ایمیل پشتیبانی':'Support email','برای ارتباط با تیم فیزیک‌یار، روی نشانی زیر بزن.':'Contact the PhysicYar team using the email address below.','ارسال ایمیل ←':'Email us →','ابزار کمک‌آموزشی فیزیک یازدهم':'Grade 11 physics learning tool',
+'کوانتیده بودن بار':'Quantization of charge','بار بنیادی و تعداد بارها':'Elementary charge and number of charges','نیروی کولن':'Coulomb force','برهم‌کنش دو بار نقطه‌ای':'Interaction between two point charges','میدان از نیرو و بار':'Electric field from force and charge','تعریف میدان الکتریکی':'Definition of electric field','میدان بار نقطه‌ای':'Field of a point charge','میدان در فاصله مشخص':'Field at a given distance','انرژی پتانسیل':'Electric potential energy','انرژی دو بار الکتریکی':'Potential energy of two charges','اختلاف پتانسیل':'Potential difference','تغییر انرژی به ازای بار':'Energy change per charge','میدان یکنواخت':'Uniform electric field','اختلاف پتانسیل و فاصله':'Potential difference and distance','ظرفیت خازن':'Capacitance','بار الکتریکی و ولتاژ':'Charge and voltage','ظرفیت خازن تخت':'Parallel-plate capacitance','مساحت صفحات و فاصله':'Plate area and separation','خازن با دی‌الکتریک':'Capacitor with dielectric','ثابت دی‌الکتریک و هندسه خازن':'Dielectric constant and geometry','انرژی خازن':'Capacitor energy','ظرفیت و ولتاژ خازن':'Capacitance and voltage','شدت جریان':'Electric current','بار عبوری و زمان':'Charge flow and time','قانون اهم':'Ohm’s law','ولتاژ، جریان و مقاومت':'Voltage, current, and resistance','مقاومت رسانا':'Resistance of a conductor','مقاومت ویژه و ابعاد سیم':'Resistivity and wire dimensions','مقاومت معادل سری':'Equivalent series resistance','جمع مقاومت‌ها':'Sum of resistances','مقاومت معادل موازی':'Equivalent parallel resistance','ترکیب موازی مقاومت‌ها':'Parallel combination of resistors','توان الکتریکی':'Electric power','ولتاژ و جریان':'Voltage and current','ولتاژ پایانه‌ای منبع':'Terminal voltage','نیروی محرکه و مقاومت درونی':'EMF and internal resistance','نیروی مغناطیسی بر بار':'Magnetic force on a charge','بار متحرک در میدان مغناطیسی':'Moving charge in a magnetic field','نیروی مغناطیسی بر سیم':'Magnetic force on a wire','سیم حامل جریان':'Current-carrying wire','میدان سیم راست بلند':'Field of a long straight wire','جریان و فاصله از سیم':'Current and distance from wire','شار مغناطیسی':'Magnetic flux','میدان، مساحت و زاویه':'Field, area, and angle','قانون فاراده':'Faraday’s law','تغییر شار در زمان':'Change in flux over time','نیروی محرکه القایی حرکتی':'Motional EMF','میله متحرک در میدان':'Moving rod in a field','مقدار مؤثر جریان متناوب':'RMS value of alternating current','ولتاژ یا جریان سینوسی':'Sinusoidal voltage or current',
+'فصل ۱ · الکتریسیتهٔ ساکن':'Chapter 1 · Electrostatics','فصل ۲ · جریان و مدار مستقیم':'Chapter 2 · Current and DC circuits','فصل ۳ · مغناطیس':'Chapter 3 · Magnetism','فصل ۴ · القا و جریان متناوب · ریاضی':'Chapter 4 · Induction and AC · Mathematics','تطبیق رشته · تجربی':'Track-specific · Experimental','الکتریسیتهٔ ساکن':'Electrostatics','جریان الکتریکی و مدارهای جریان مستقیم':'Electric current and DC circuits','مغناطیس':'Magnetism','القای الکترومغناطیسی و جریان متناوب':'Electromagnetic induction and alternating current','القای الکترومغناطیسی · تجربی':'Electromagnetic induction · Experimental','بار الکتریکی و کوانتیده بودن':'Electric charge and quantization','پایستگی بار الکتریکی':'Conservation of electric charge','پتانسیل و انرژی پتانسیل':'Potential and potential energy','میدان الکتریکی':'Electric field','قانون کولن':'Coulomb’s law','درس‌نامه':'Lessons','درس ۰۱':'Lesson 01','درس ۰۲':'Lesson 02','درس ۰۳':'Lesson 03','درس ۰۴':'Lesson 04','درس ۰۵':'Lesson 05'
+};
+Object.assign(T,{
+'فصل ۱ · مشترک':'Chapter 1 · Shared','فصل ۲ · مشترک':'Chapter 2 · Shared','فصل ۳ · مشترک':'Chapter 3 · Shared','فصل ۴ · ریاضی‌فیزیک':'Chapter 4 · Mathematics','تطبیق رشته · تجربی':'Track-specific · Experimental Sciences',
+'بار الکتریکی و پایستگی آن، قانون کولن، میدان الکتریکی، انرژی پتانسیل و پتانسیل الکتریکی، خازن و انرژی ذخیره‌شده.':'Electric charge and its conservation, Coulomb’s law, electric fields, potential energy and electric potential, capacitors, and stored energy.',
+'جریان، اختلاف پتانسیل، مقاومت، قانون اهم، مقاومت ویژه، نیروی محرکهٔ الکتریکی، مدارهای سری و موازی و توان الکتریکی.':'Current, potential difference, resistance, Ohm’s law, resistivity, electromotive force, series and parallel circuits, and electric power.',
+'میدان مغناطیسی، نیروی مغناطیسی وارد بر بار متحرک و سیم حامل جریان، میدان حاصل از جریان و القای مغناطیسی.':'Magnetic fields, magnetic force on moving charges and current-carrying wires, fields produced by currents, and magnetic induction.',
+'شار مغناطیسی، قانون فاراده و لنز، نیروی محرکهٔ القایی، جریان متناوب و ویژگی‌های مدارهای سادهٔ AC.':'Magnetic flux, Faraday’s and Lenz’s laws, induced EMF, alternating current, and basic AC circuit properties.',
+'مباحث القای الکترومغناطیسی در فصل سوم کتاب تجربی بررسی می‌شود؛ ترتیب و گسترهٔ جزئیات با کتاب همان رشته تطبیق داده شود.':'Electromagnetic induction is covered in Chapter 3 of the Experimental Sciences textbook. Follow the sequence and level of detail in that track’s textbook.',
+'نمادها: q و Q بار، e بار بنیادی، r فاصله، E میدان، V پتانسیل، C ظرفیت و κ ثابت دی‌الکتریک.':'Symbols: q and Q are charge, e is elementary charge, r is distance, E is field, V is potential, C is capacitance, and κ is the dielectric constant.',
+'نمادها: I جریان، Q بار عبوری، R مقاومت، ρ مقاومت ویژه، L طول، A سطح مقطع، P توان و r مقاومت درونی. رابطهٔ منبع با توجه به قرارداد علامت و حالت مدار به‌کار رود.':'Symbols: I is current, Q is transferred charge, R is resistance, ρ is resistivity, L is length, A is cross-sectional area, P is power, and r is internal resistance. Apply the source equation according to the sign convention and circuit state.',
+'زاویه θ بین جهت سرعت و میدان، یا جهت جریان و میدان است. جهت نیرو با قاعدهٔ دست راست تعیین می‌شود.':'Angle θ is between velocity and the field, or current and the field. Use the right-hand rule to determine force direction.',
+'شار Φ، تعداد دور N، و زاویهٔ θ بین میدان و بردار عمود بر سطح است. رابطه‌های جریان متناوب برای کمیت‌های سینوسی‌اند.':'Φ is magnetic flux, N is the number of turns, and θ is the angle between the field and the surface normal. AC relations here apply to sinusoidal quantities.',
+'بار الکتریکی ویژگی‌ای از ماده است. بار هر جسم از مضرب صحیحی از بار بنیادی تشکیل می‌شود.':'Electric charge is a property of matter. The charge of an object is an integer multiple of the elementary charge.',
+'در یک سامانه‌ی منزوی، مجموع جبری بار الکتریکی ثابت می‌ماند؛ بار ایجاد یا نابود نمی‌شود و فقط جابه‌جا می‌شود.':'In an isolated system, the algebraic sum of electric charge remains constant. Charge is neither created nor destroyed; it is transferred.',
+'اندازه‌ی نیروی الکتریکی بین دو بار نقطه‌ای با حاصل‌ضرب اندازه‌ی بارها متناسب و با مربع فاصله نسبت وارون دارد.':'The electric force magnitude between two point charges is proportional to the product of their charge magnitudes and inversely proportional to the square of their separation.',
+'میدان الکتریکی، نیروی وارد بر واحد بار آزمون مثبت در یک نقطه است.':'The electric field is the force exerted per unit positive test charge at a point.',
+'انرژی پتانسیل دو بار نقطه‌ای به علامت بارها و فاصله‌ی آن‌ها وابسته است.':'The electric potential energy of two point charges depends on their signs and separation.',
+'بارهای هم‌نام یکدیگر را دفع و بارهای ناهم‌نام یکدیگر را جذب می‌کنند.':'Like charges repel; opposite charges attract.','بار بنیادی: e = 1.6 × 10⁻¹⁹ C':'Elementary charge: e = 1.6 × 10⁻¹⁹ C','اختلاف پتانسیل: ΔV = ΔU / q':'Potential difference: ΔV = ΔU / q','واحد میدان: N/C یا V/m':'Field unit: N/C or V/m',
+
+'۱) اگر فاصلهٔ دو بار ۳ برابر شود، اندازهٔ نیروی کولن چند برابر می‌شود؟':'1) If the distance between two charges triples, by what factor does the Coulomb force change?','پاسخ: ۱/۹':'Answer: 1/9','۲) یکای ظرفیت خازن چیست؟':'2) What is the unit of capacitance?','پاسخ: فاراد':'Answer: farad','۳) در خازن تخت، با افزایش فاصلهٔ صفحات و ثابت‌بودن سایر عوامل، ظرفیت چه تغییری می‌کند؟':'3) In a parallel-plate capacitor, what happens to capacitance if plate separation increases while other factors stay constant?','پاسخ: کاهش می‌یابد.':'Answer: It decreases.',
+'۱) اگر ۱۲ کولن بار در ۳ ثانیه از مقطع سیم بگذرد، جریان چقدر است؟':'1) If 12 coulombs pass through a wire cross-section in 3 seconds, what is the current?','پاسخ: ۴ آمپر':'Answer: 4 amperes','۲) در اتصال سری مقاومت‌ها، کدام کمیت در همهٔ مقاومت‌ها یکسان است؟':'2) In a series connection, which quantity is the same through all resistors?','پاسخ: جریان':'Answer: Current','۳) اگر ولتاژ دو سر مقاومت ثابت و مقاومت دو برابر شود، جریان چه می‌شود؟':'3) If voltage stays constant and resistance doubles, what happens to current?','پاسخ: نصف می‌شود.':'Answer: It is halved.',
+'۱) نیروی مغناطیسی بر بار ساکن در میدان مغناطیسی چه مقدار است؟':'1) What is the magnetic force on a stationary charge in a magnetic field?','پاسخ: صفر':'Answer: Zero','۲) نیروی وارد بر سیم حامل جریان در چه حالتی بیشینه است؟':'2) When is the force on a current-carrying wire maximum?','پاسخ: وقتی سیم بر میدان عمود باشد.':'Answer: When the wire is perpendicular to the field.','۳) میدان مغناطیسی سیم راست بلند با فاصله از سیم چه نسبتی دارد؟':'3) How does the magnetic field of a long straight wire depend on distance?','پاسخ: نسبت وارون':'Answer: Inversely proportional.',
+'۱) شار مغناطیسی به چه عواملی وابسته است؟':'1) Which factors determine magnetic flux?','پاسخ: میدان، مساحت و زاویهٔ سطح با میدان.':'Answer: Magnetic field, area, and angle.','۲) قانون لنز چه چیزی را تعیین می‌کند؟':'2) What does Lenz’s law determine?','پاسخ: جهت اثر القایی در مخالفت با تغییر شار.':'Answer: The direction of the induced effect, opposing the change in flux.','۳) مقدار مؤثر ولتاژ سینوسی برابر چیست؟':'3) What is the RMS value of a sinusoidal voltage?','پاسخ: Vmax/√2':'Answer: Vmax/√2',
+'۱. بار الکتریکی یک جسم چند برابر بار بنیادی است؟':'1. The charge of an object is what multiple of the elementary charge?','همیشه عدد اعشاری':'Always a decimal','مضرب صحیح':'An integer multiple','همیشه مثبت':'Always positive','بار الکتریکی جسم برابر n برابر بار بنیادی است که n عددی صحیح است.':'An object’s charge equals n times the elementary charge, where n is an integer.',
+'۲. اگر فاصله‌ی دو بار نقطه‌ای ۲ برابر شود، اندازه‌ی نیروی کولن چند برابر می‌شود؟':'2. If the distance between two point charges doubles, by what factor does the Coulomb force change?','۲ برابر':'2 times','۴ برابر':'4 times','یک‌چهارم':'One quarter','نیرو با مربع فاصله نسبت وارون دارد؛ پس با دو برابر شدن فاصله، نیرو یک‌چهارم می‌شود.':'Force is inversely proportional to the square of distance, so doubling the distance makes the force one quarter.',
+'۳. یکای SI میدان الکتریکی کدام است؟':'3. What is the SI unit of electric field?','از رابطه‌ی E = F/q، یکای میدان نیوتون بر کولن است.':'From E = F/q, the field unit is newtons per coulomb.',
+'۴. دو بار ناهم‌نام چه نوع نیرویی به هم وارد می‌کنند؟':'4. What kind of force do two opposite charges exert on each other?','دافعه':'Repulsion','جاذبه':'Attraction','نیروی صفر در همه‌ی حالت‌ها':'Zero in all cases','بارهای ناهم‌نام یکدیگر را جذب می‌کنند.':'Opposite charges attract each other.',
+'۵. در رابطه‌ی U = kq₁q₂/r، اگر فاصله بیشتر شود و بارها ثابت بمانند، اندازه‌ی انرژی پتانسیل چه می‌شود؟':'5. In U = kq₁q₂/r, what happens to the magnitude of potential energy if distance increases while charges remain constant?','بیشتر می‌شود':'It increases','ثابت می‌ماند':'It stays constant','کمتر می‌شود':'It decreases','اندازه‌ی انرژی پتانسیل با فاصله نسبت وارون دارد.':'The magnitude of potential energy is inversely proportional to distance.',
+'سانتی‌متر به متر':'Centimeters to meters','متر به سانتی‌متر':'Meters to centimeters','میلی‌متر به متر':'Millimeters to meters','کیلومتر به متر':'Kilometers to meters','میکروکولن به کولن':'Microcoulombs to coulombs','ناناکولن به کولن':'Nanocoulombs to coulombs','میلی‌کولن به کولن':'Millicoulombs to coulombs','میکروفاراد به فاراد':'Microfarads to farads','نانوفاراد به فاراد':'Nanofarads to farads','میلی‌فاراد به فاراد':'Millifarads to farads',
+'عدد نامعتبر است. نمونه: 4×10^-6 یا ۴ × ۱۰⁻⁶':'Invalid number. Example: 4×10^-6.','عدد واردشده خارج از محدوده قابل پردازش است.':'The entered number is outside the supported range.','لطفاً همه مقادیر را وارد کن.':'Please enter all values.','تعداد بارهای بنیادی باید عدد صحیح و نامنفی باشد.':'The number of elementary charges must be a non-negative integer.','فاصله باید بزرگ‌تر از صفر باشد.':'Distance must be greater than zero.','بار الکتریکی نمی‌تواند صفر باشد.':'Electric charge cannot be zero.','ولتاژ نباید صفر باشد.':'Voltage cannot be zero.','مساحت و فاصله باید بزرگ‌تر از صفر باشند.':'Area and distance must be greater than zero.','همه مقادیر باید بزرگ‌تر از صفر باشند.':'All values must be greater than zero.','ظرفیت خازن نمی‌تواند منفی باشد.':'Capacitance cannot be negative.','زمان باید بزرگ‌تر از صفر باشد.':'Time must be greater than zero.','جریان نمی‌تواند صفر باشد.':'Current cannot be zero.','مقاومت ویژه نمی‌تواند منفی و طول و مساحت باید مثبت باشند.':'Resistivity cannot be negative; length and area must be positive.','مقاومت منفی وارد نکن.':'Resistance cannot be negative.','حداقل یک مقاومت مثبت لازم است و مقاومت منفی مجاز نیست.':'At least one positive resistance is required; negative resistance is not allowed.','مقاومت درونی نمی‌تواند منفی باشد.':'Internal resistance cannot be negative.','نتیجه خارج از محدوده قابل نمایش است.':'The result is outside the displayable range.','نتیجه محاسبه خارج از محدوده قابل نمایش است.':'The calculation result is outside the displayable range.',
+'گام ۱: داده‌های مسئله':'Step 1: Given values','گام ۲: فرمول':'Step 2: Formula','گام ۳: جایگذاری':'Step 3: Substitution','گام ۴: نتیجه':'Step 4: Result','ابتدا یک کادر ورودی را انتخاب کن':'Select an input field first','ورودی فعال: ':'Active input: '
+});
+
+Object.assign(T,{
+'اندازه نیروی کولن':'Coulomb force magnitude','اندازه میدان الکتریکی':'Electric field magnitude','انرژی پتانسیل الکتریکی':'Electric potential energy','اختلاف پتانسیل الکتریکی':'Electric potential difference','ظرفیت خازن':'Capacitance','ظرفیت خازن تخت':'Parallel-plate capacitance','ظرفیت خازن با دی‌الکتریک':'Capacitance with dielectric','انرژی ذخیره‌شده در خازن':'Stored capacitor energy','شدت جریان':'Electric current','مقاومت الکتریکی':'Electrical resistance','مقاومت رسانا':'Conductor resistance','مقاومت معادل سری':'Equivalent series resistance','مقاومت معادل موازی':'Equivalent parallel resistance','توان الکتریکی':'Electric power','ولتاژ پایانه‌ای':'Terminal voltage','اندازه نیروی مغناطیسی':'Magnetic force magnitude','اندازه نیروی مغناطیسی بر سیم':'Magnetic force on wire','میدان مغناطیسی':'Magnetic field','شار مغناطیسی':'Magnetic flux','اندازه نیروی محرکه القایی':'Induced EMF magnitude','مقدار مؤثر':'RMS value',
+'این رابطه اندازه میدان را می‌دهد؛ جهت میدان به علامت بار بستگی دارد.':'This relation gives the field magnitude; its direction depends on the charge sign.','در این رابطه اندازه نیرو محاسبه می‌شود؛ علامت بارها در تعیین جاذبه یا دافعه بودن اثر دارد.':'This calculates force magnitude; charge signs determine whether the interaction is attractive or repulsive.','میدان از تقسیم اندازه نیرو بر اندازه بار به دست می‌آید.':'The field magnitude is the force magnitude divided by the charge magnitude.','علامت نتیجه با توجه به علامت حاصل‌ضرب دو بار تعیین می‌شود.':'The sign of the result depends on the product of the two charges.','ظرفیت از تقسیم اندازه بار ذخیره‌شده بر اندازه ولتاژ به دست می‌آید.':'Capacitance equals the magnitude of stored charge divided by voltage magnitude.','این رابطه برای خازن تخت در خلأ یا تقریباً هوا نوشته شده است.':'This relation applies to a parallel-plate capacitor in vacuum or approximately in air.','وجود دی‌الکتریک ظرفیت خازن را به اندازه ثابت دی‌الکتریک افزایش می‌دهد.':'A dielectric increases capacitance by the factor of the dielectric constant.','انرژی خازن برابر نصف حاصل‌ضرب ظرفیت در مجذور ولتاژ است.':'Capacitor energy equals one half times capacitance times voltage squared.','شدت جریان برابر بار عبوری از مقطع رسانا در واحد زمان است.':'Current equals the charge passing through a conductor per unit time.','این رابطه برای رسانای اهمی در شرایط فیزیکی ثابت به‌کار می‌رود.':'This relation applies to an ohmic conductor under constant physical conditions.','با افزایش طول مقاومت بیشتر و با افزایش سطح مقطع کمتر می‌شود.':'Resistance increases with length and decreases as cross-sectional area increases.','در اتصال سری، مقاومت‌ها با هم جمع می‌شوند.':'In a series connection, resistances are added.','معکوس مقاومت معادل برابر مجموع معکوس مقاومت شاخه‌هاست.':'The reciprocal of equivalent resistance equals the sum of the reciprocals of branch resistances.','در این ابزار توان با حاصل‌ضرب ولتاژ و جریان محاسبه می‌شود.':'This tool calculates power as the product of voltage and current.','برای حالت دشارژ منبع از V=ε−Ir استفاده شده است.':'For a discharging source, V = ε − Ir is used.','نیرو به زاویه بین سرعت و میدان وابسته است؛ جهت نیرو در این محاسبه تعیین نمی‌شود.':'The force depends on the angle between velocity and magnetic field; direction is not calculated here.','در حالت عمود بودن سیم و میدان، نیرو بیشینه است.':'The force is maximum when the wire and field are perpendicular.','رابطه برای سیم راست بلند در محیط هوا یا خلأ است.':'This relation applies to a long straight wire in air or vacuum.','شار با کسینوس زاویه بین میدان و بردار عمود بر سطح متناسب است.':'Flux is proportional to the cosine of the angle between the field and the surface normal.','این رابطه مقدار متوسط را می‌دهد؛ جهت جریان با قانون لنز تعیین می‌شود.':'This gives the average magnitude; the induced current direction is determined by Lenz’s law.','رابطه برای آرایش ساده‌ای است که حرکت، میدان و میله بر یکدیگر عمودند.':'This relation applies when motion, field, and rod are mutually perpendicular.','مقدار مؤثر کمیت سینوسی برابر مقدار بیشینه تقسیم بر ریشه دوم دو است.':'The RMS value of a sinusoidal quantity equals its peak value divided by the square root of two.'
+});
+
+const itemEN={
+1:['Quantization of charge','Electric charge is an integer multiple of the elementary charge.',['Number of elementary charges'], 'Electric charge','Total charge equals the number of elementary charges multiplied by the elementary charge.'],
+2:['Coulomb force','Calculate the magnitude of the electric force between two point charges at a given distance.',['First electric charge','Second electric charge','Distance between charges'],'Coulomb force magnitude','This calculates force magnitude; charge signs determine whether the interaction is attractive or repulsive.'],
+3:['Electric field from force and charge','Find the electric field magnitude from the force on a test charge.',['Force magnitude','Electric charge'],'Electric field magnitude','The field magnitude is the force magnitude divided by the charge magnitude.'],
+4:['Field of a point charge','Calculate the electric field magnitude created by a point charge.',['Electric charge','Distance from charge'],'Electric field magnitude','This gives the field magnitude; its direction depends on the charge sign.'],
+5:['Electric potential energy','Calculate the electric potential energy of a system of two point charges.',['First electric charge','Second electric charge','Distance between charges'],'Electric potential energy','The sign of the result depends on the product of the two charges.'],
+6:['Potential difference','Calculate potential difference from the change in potential energy and charge.',['Change in potential energy','Electric charge'],'Electric potential difference','The sign depends on the signs of the energy change and charge.'],
+7:['Uniform electric field','Calculate a uniform electric field from potential difference and separation.',['Potential difference','Distance between two points'],'Electric field magnitude','For a uniform field, its magnitude is the potential difference magnitude divided by distance.'],
+8:['Capacitance','Calculate capacitance from electric charge and potential difference.',['Capacitor charge','Capacitor voltage'],'Capacitance','Capacitance equals the magnitude of stored charge divided by voltage magnitude.'],
+9:['Parallel-plate capacitance','Calculate the capacitance of a parallel-plate capacitor from plate area and separation.',['Plate area','Plate separation'],'Parallel-plate capacitance','This relation applies to a parallel-plate capacitor in vacuum or approximately in air.'],
+10:['Capacitance with a dielectric','Calculate parallel-plate capacitance including the dielectric constant.',['Plate area','Plate separation','Dielectric constant'],'Capacitance with dielectric','A dielectric increases capacitance by the factor of the dielectric constant.'],
+11:['Capacitor energy','Calculate energy stored in a capacitor from capacitance and voltage.',['Capacitance','Capacitor voltage'],'Stored capacitor energy','Capacitor energy equals one half times capacitance times voltage squared.'],
+12:['Electric current','Calculate average current from charge flow and elapsed time.',['Charge transferred','Time'],'Electric current','Current equals the charge passing through a conductor per unit time.'],
+13:['Ohm’s law','Calculate resistance from voltage and current.',['Potential difference','Electric current'],'Electrical resistance','This relation applies to an ohmic conductor under constant physical conditions.'],
+14:['Resistance of a conductor','Calculate wire resistance from resistivity, length, and cross-sectional area.',['Resistivity','Conductor length','Cross-sectional area'],'Conductor resistance','Resistance increases with length and decreases as cross-sectional area increases.'],
+15:['Equivalent series resistance','Calculate the equivalent resistance of resistors connected in series.',['First resistance','Second resistance','Third resistance (enter zero if unused)'],'Equivalent series resistance','In a series connection, resistances are added.'],
+16:['Equivalent parallel resistance','Calculate the equivalent resistance of three parallel branches.',['First resistance','Second resistance','Third resistance (enter zero if unused)'],'Equivalent parallel resistance','The reciprocal of equivalent resistance equals the sum of the reciprocals of branch resistances.'],
+17:['Electric power','Calculate the power consumed by a device from voltage and current.',['Voltage','Current'],'Electric power','This tool calculates power as the product of voltage and current.'],
+18:['Terminal voltage','Calculate the terminal voltage of a source delivering current, including internal resistance.',['Electromotive force','Current','Internal resistance'],'Terminal voltage','For a discharging source, V = ε − Ir is used.'],
+19:['Magnetic force on a moving charge','Calculate the magnitude of magnetic force on a moving charge.',['Electric charge','Speed','Magnetic field','Angle'],'Magnetic force magnitude','The force depends on the angle between velocity and magnetic field; direction is not calculated here.'],
+20:['Magnetic force on a wire','Calculate the force magnitude on a current-carrying wire in a magnetic field.',['Magnetic field','Current','Wire length in field','Angle'],'Magnetic force on wire','The force is maximum when the wire and field are perpendicular.'],
+21:['Field of a long straight wire','Calculate magnetic field magnitude at a distance from a long straight wire.',['Wire current','Distance from wire'],'Magnetic field','This relation applies to a long straight wire in air or vacuum.'],
+22:['Magnetic flux','Calculate uniform magnetic flux through a flat surface.',['Magnetic field','Surface area','Angle to the normal'],'Magnetic flux','Flux is proportional to the cosine of the angle between the field and the surface normal.'],
+23:['Induced EMF (Faraday’s law)','Calculate average induced EMF from the change in magnetic flux over time.',['Number of coil turns','Flux change per turn','Time interval'],'Induced EMF magnitude','This gives the average magnitude; the induced current direction is determined by Lenz’s law.'],
+24:['Motional EMF','Calculate motional EMF in a rod moving perpendicular to a magnetic field.',['Magnetic field','Rod length','Rod speed'],'Motional EMF','This relation applies when motion, field, and rod are mutually perpendicular.'],
+25:['RMS value of AC voltage or current','Calculate the RMS value of a sinusoidal quantity from its maximum value.',['Maximum value (V or A)'],'RMS value','The RMS value of a sinusoidal quantity equals its peak value divided by the square root of two.']
+};
+const staticNodes=[];
+function applyLanguage(next){lang=next;const en=lang==='en';document.documentElement.lang=en?'en':'fa';document.documentElement.dir=en?'ltr':'rtl';
+ if(!window.__faOriginals){const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;while(n=walker.nextNode()){if(n.nodeValue.trim())staticNodes.push({node:n,original:n.nodeValue});}window.__faOriginals=staticNodes;}
+ staticNodes.forEach(({node,original})=>{if(!node.isConnected)return;const raw=original.trim();const translated=T[raw];node.nodeValue=original.replace(raw,en?(translated||raw):raw);});
+ const attrs=[['search','placeholder','جست‌وجوی فرمول یا موضوع...','Search formulas or topics...'],['convertValue','placeholder','مثلاً ۲٫۵','e.g. 2.5']];attrs.forEach(([id,a,fa,eng])=>{const el=$(id);if(el)el.setAttribute(a,en?eng:fa);});
+ const btn=$('languageToggle');if(btn)btn.textContent=en?'فارسی':'English';
+ if(typeof items!=='undefined'&&items){Object.keys(itemEN).forEach(k=>{const c=items[k],d=itemEN[k];if(!c)return;if(!c.__fa){c.__fa={title:c.title,desc:c.desc,fields:c.fields.map(f=>f.slice()),run:c.run};}if(en){c.title=d[0];c.desc=d[1];c.fields=c.__fa.fields.map((f,i)=>[f[0],d[2][i]||f[1],f[2],f[3],f[4]]);c.run=(v)=>c.__fa.run(v).map(x=>typeof x==='string'?(T[x]||x):x);}else{c.title=c.__fa.title;c.desc=c.__fa.desc;c.fields=c.__fa.fields.map(f=>f.slice());c.run=c.__fa.run;}});if(typeof render==='function')render(current);}
+ const track=$('trackSelect');if(track&&en){[...track.options].forEach((o,i)=>o.textContent=['Show shared and track-specific topics','Mathematics and Physics','Experimental Sciences'][i]||o.textContent);}
+ try{localStorage.setItem('physicyar-language',lang);}catch(e){}
+}
+$('languageToggle')?.addEventListener('click',()=>applyLanguage(lang==='fa'?'en':'fa'));
+let preferred='fa';try{preferred=localStorage.getItem('physicyar-language')||'fa';}catch(e){};
+// Wait until the original calculator data and initial render have been created.
+setTimeout(()=>{if(preferred==='en')applyLanguage('en');},0);
+})();
+</script>
+
 </body>
 </html>
